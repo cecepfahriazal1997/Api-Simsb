@@ -72,6 +72,7 @@ class Patient extends REST_Controller
             $insert['ThreadCon']    = $threadCondition;
             $insert['DoctorNm']     = $doctorName;
             $insert['NurseNm']      = $nurseName;
+            $insert['SupportNm']    = $supportName;
             $insert['Remark']       = $remark;
             $insert['UserID']       = $userInput;
             $insert['var1']         = $number;
@@ -120,6 +121,7 @@ class Patient extends REST_Controller
             $update['ThreadCon']    = $threadCondition;
             $update['DoctorNm']     = $doctorName;
             $update['NurseNm']      = $nurseName;
+            $update['SupportNm']    = $supportName;
             $update['Remark']       = $remark;
 
             $inserData              = $this->model->updateData($patientId, $update);
