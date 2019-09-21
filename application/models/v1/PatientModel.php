@@ -7,7 +7,9 @@ class PatientModel extends CI_Model
     }
 
     public function getPatient() {
+        $this->db->select('geninfo.*, countries.name as nameCountries', false);
         $this->db->order_by('Time', 'DESC');
+        $this->db->join('countries', 'countries.iso1_code = geninfo.Location', 'left');
         $list   = $this->db->get('geninfo')->result();
         return $list;
     }
@@ -15,6 +17,11 @@ class PatientModel extends CI_Model
     public function getPatientById($id) {
         $this->db->where('PatientId', $id);
         return $this->db->get('geninfo')->row();
+    }
+
+    public function getHistory($id) {
+        $this->db->where('PatientId', $id);
+        return $this->db->get('history')->row();
     }
 
     public function insertData($data) {
