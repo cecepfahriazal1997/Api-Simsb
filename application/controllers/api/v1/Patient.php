@@ -176,5 +176,86 @@ class Patient extends REST_Controller
 
         $this->response($response);
     }
+
+    public function getHistory_get() {
+        $patientId          = $this->get('id');
+        $response           = array();
+
+        if (!empty($patientId)) {
+            $data                   = $this->model->getHistoryById($patientId);
+            if (!empty($data->PatientId)) {
+                $response['status']     = '1';
+                $response['message']    = 'Data berhasil ditemukan !';
+                $response['data']       = $data;
+            } else {
+                $response['status']     = '0';
+                $response['message']    = 'Data tidak ditemukan !';
+            }
+        } else {
+            $response['status']     = '0';
+            $response['message']    = 'Patient tidak terdaftar di dalam sistem !';
+        }
+
+        $this->response($response);
+    }
+
+    public function saveHistory_post() {
+        $patientId          = $this->post('id');
+        $typeRecord         = $this->post('typeRecord');
+        $symptom            = $this->post('symptom');
+        $specific           = $this->post('specific');
+        $relationship       = $this->post('relationship');
+        $condition          = $this->post('condition');
+        $specificCondition  = $this->post('specificCondition');
+        $lab                = $this->post('lab');
+        $radiologi          = $this->post('radiologi');
+        $diagnostic         = $this->post('diagnostic');
+        $therapy            = $this->post('therapy');
+        $rehability         = $this->post('rehability');
+        $remark             = $this->post('remark');
+        $userInput          = $this->post('userInput');
+        $response           = array();
+        $data               = array();
+
+        if (!empty($patientId)) {
+            $cekData                    = $this->model->getHistoryById($patientId);
+            $data['PatientId']          = $patientId;
+            $data['HistoryType']        = $typeRecord;
+            $data['Symptom']            = $symptom;
+            $data['SpecSymptom']        = $specific;
+            $data['FamilyRelated']      = $relationship;
+            $data['GenCon']             = $condition;
+            $data['SpecCon']            = $specificCondition;
+            $data['Laboratory']         = $lab;
+            $data['Radiology']          = $radiologi;
+            $data['Diagnosis']          = $diagnostic;
+            $data['Therapy']            = $therapy;
+            $data['Rehabilitation']      = $rehability;
+            $data['Remark']             = $remark;
+            $data['Diagnosis']          = $userInput;
+            if (empty($cekData)) {
+                if ($this->model->insertDataHistory($data)) {
+                    $response['status']     = '1';
+                    $response['message']    = 'Data berhasil ditambahkan !';
+                } else {
+                    $response['status']     = '0';
+                    $response['status']     = 'Data gagal ditambahkan !';
+                }
+            } else {
+                if ($this->model->updateDataHistory($patientId, $data)) {
+                    $response['status']     = '1';
+                    $response['message']    = 'Data berhasil diperbaharui !';
+                } else {
+                    $response['status']     = '0';
+                    $response['status']     = 'Data gagal diperbaharui !';
+                }
+            }
+        } else {
+            $response['status']     = '0';
+            $response['message']    = 'Pasien tidak terdaftar di sistem !';
+        }
+
+        $this->response($response);
+    }
 }
 ?>

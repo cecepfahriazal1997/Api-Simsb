@@ -19,7 +19,7 @@ class PatientModel extends CI_Model
         return $this->db->get('geninfo')->row();
     }
 
-    public function getHistory($id) {
+    public function getHistoryById($id) {
         $this->db->where('PatientId', $id);
         return $this->db->get('history')->row();
     }
@@ -41,6 +41,19 @@ class PatientModel extends CI_Model
         if (!empty($id)) {
             $this->db->where('PatientId', $id);
             return $this->db->delete('geninfo');
+        } else {
+            return false;
+        }
+    }
+
+    public function insertDataHistory($data) {
+        return $this->db->insert('history', $data);
+    }
+
+    public function updateDataHistory($id, $data) {
+        if (!empty($id)) {
+            $this->db->where('PatientId', $id);
+            return $this->db->update('history', $data);
         } else {
             return false;
         }
