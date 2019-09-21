@@ -46,6 +46,8 @@ class Master extends REST_Controller
             $data           = array('Perban', 'Obat', 'Operasi', 'Opertio', 'Fisioterapi', 'Penggantian', 'Invactive Minimum', 'Pemulihan Fisik');
         } else if ($type == 'rehabilitas') {
             $data           = array('Fisioterapi', 'Terapi Occupational', 'Terapi Sosial');
+        } else if ($type == 'komplikasi') {
+            $data           = array('Infeksi', 'Patah Tulang', 'Cacat', 'Stress Psikologi Pasca Bencana');
         }
 
         $index          = 1;
