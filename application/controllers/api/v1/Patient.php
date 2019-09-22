@@ -215,7 +215,7 @@ class Patient extends REST_Controller
     }
 
     public function saveHistory_post() {
-        $patientId          = $this->post('id');
+        $patientId          = $this->post('patientId');
         $typeRecord         = $this->post('typeRecord');
         $symptom            = $this->post('symptom');
         $specific           = $this->post('specific');
