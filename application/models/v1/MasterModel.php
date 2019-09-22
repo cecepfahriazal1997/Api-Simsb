@@ -29,6 +29,8 @@ class MasterModel extends CI_Model
             $data           = array('Fisioterapi', 'Terapi Occupational', 'Terapi Sosial');
         } else if ($type == 'komplikasi') {
             $data           = array('Infeksi', 'Patah Tulang', 'Cacat', 'Stress Psikologi Pasca Bencana');
+        } else if ($type == 'detailKomplikasi') {
+            $data           = array('Infeksi', 'Patah Tulang', 'Cacat', 'Stress Psikologi Pasca Bencana');
         }
 
         return $data;
