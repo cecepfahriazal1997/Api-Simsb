@@ -35,7 +35,7 @@ class MasterModel extends CI_Model
     }
 
     public function getCountries() {
-        $this->db->select('iso1_code as id, name', false);
+        $this->db->select('iso1_code as id, name as title', false);
         $this->db->order_by('name', 'ASC');
         return $this->db->get('countries')->result();
     }
