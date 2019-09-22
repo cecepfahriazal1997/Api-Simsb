@@ -58,10 +58,5 @@ class PatientModel extends CI_Model
             return false;
         }
     }
-
-    public function getCountries() {
-        $this->db->order_by('name', 'ASC');
-        return $this->db->get('countries')->result();
-    }
 }
 ?>

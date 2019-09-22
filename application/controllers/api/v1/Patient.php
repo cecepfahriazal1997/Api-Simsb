@@ -19,6 +19,7 @@ class Patient extends REST_Controller
     public function __construct() {
         parent::__construct();
         $this->load->model("v1/PatientModel", "model");
+        $this->load->model("v1/MasterModel", "master");
     }
 
     public function listPatient_get() {
@@ -162,21 +163,6 @@ class Patient extends REST_Controller
         $this->response($response);
     }
 
-    public function listCountries_get() {
-        $listData       = $this->model->getCountries();
-        $response       = array();
-        if (count($listData) > 0) {
-            $response['status']     = '1';
-            $response['message']    = '';
-            $response['data']       = $listData;
-        } else {
-            $response['status']     = '0';
-            $response['message']    = 'Data tidak ditemukan !';
-        }
-
-        $this->response($response);
-    }
-
     public function getHistory_get() {
         $patientId          = $this->get('id');
         $response           = array();
@@ -184,9 +170,38 @@ class Patient extends REST_Controller
         if (!empty($patientId)) {
             $data                   = $this->model->getHistoryById($patientId);
             if (!empty($data->PatientId)) {
+                $param                      = array();
+                $specificLabel              = $this->master->masterStatic('gejalaSpesifik');
+                $radiologiLabel             = $this->master->masterStatic('radiologi');
+                $diagnosticLabel            = $this->master->masterStatic('diagnosis');
+                $therapyLabel               = $this->master->masterStatic('terapi');
+                $rehabilityLabel            = $this->master->masterStatic('rehabilitas');
+
+                $param['PatientId']         = $patientId;
+                $param['HistoryType']       = $data->HistoryType;
+                $param['HistoryTypeName']   = ($data->HistoryType == '2' ? 'Bingung' : 'Gagal');
+                $param['Symptom']           = $data->Symptom;
+                $param['SymptomName']       = ($data->Symptom == '2' ? 'Mengantuk' : 'Sakit');
+                $param['SpecSymptom']       = $data->SpecSymptom;
+                $param['SpecSymptomName']   = $specificLabel[($data->SpecSymptom > 0 ? $data->SpecSymptom - 1 : $data->SpecSymptom)];
+                $param['FamilyRelated']     = $data->FamilyRelated;
+                $param['GenCon']            = $data->GenCon;
+                $param['SpecCon']           = $data->SpecCon;
+                $param['Laboratory']        = $data->Laboratory;
+                $param['Radiology']         = $data->Radiology;
+                $param['RadiologyName']     = $radiologiLabel[($data->Radiology > 0 ? $data->Radiology - 1 : $data->Radiology)];
+                $param['Diagnosis']         = $data->Diagnosis;
+                $param['DiagnosisName']     = $diagnosticLabel[($data->Diagnosis > 0 ? $data->Diagnosis - 1 : $data->Diagnosis)];
+                $param['Therapy']           = $data->Therapy;
+                $param['TherapyName']       = $therapyLabel[($data->Therapy > 0 ? $data->Therapy - 1 : $data->Therapy)];
+                $param['Rehabilitation']    = $data->Rehabilitation;
+                $param['RehabilitationName']= $rehabilityLabel[($data->Rehabilitation > 0 ? $data->Rehabilitation - 1 : $data->Rehabilitation)];
+                $param['Remark']            = $data->Remark;
+                $param['UserID']            = $data->UserID;
+
                 $response['status']     = '1';
                 $response['message']    = 'Data berhasil ditemukan !';
-                $response['data']       = $data;
+                $response['data']       = $param;
             } else {
                 $response['status']     = '0';
                 $response['message']    = 'Data tidak ditemukan !';
@@ -230,9 +245,9 @@ class Patient extends REST_Controller
             $data['Radiology']          = $radiologi;
             $data['Diagnosis']          = $diagnostic;
             $data['Therapy']            = $therapy;
-            $data['Rehabilitation']      = $rehability;
+            $data['Rehabilitation']     = $rehability;
             $data['Remark']             = $remark;
-            $data['Diagnosis']          = $userInput;
+            $data['UserID']             = $userInput;
             if (empty($cekData)) {
                 if ($this->model->insertDataHistory($data)) {
                     $response['status']     = '1';

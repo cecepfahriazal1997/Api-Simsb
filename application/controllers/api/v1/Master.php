@@ -24,32 +24,9 @@ class Master extends REST_Controller
     public function dataMasterStatic_get() {
         $type           = $this->get('type');
         $response       = array();
-        $data           = array();
         $temp           = array();
-
-        if ($type == 'gejalaSpesifik') {
-            $data           = array('Luka', 'Oedema', 'Woud', 'Disorientasi');
-        } elseif ($type == 'hubunganKeluarga') {
-            $data           = array('Grand Daug', 'Father', 'Mother', 'Son', 'Daughter', 'Grad Father', 
-                                    'Grand Mother', 'Son', 'Grand Daughter');
-        } else if ($type == 'radiologi') {
-            $data           = array('Frackture Tibia 1/3 Upper', 'Frackture Tibia 1/3 Middle', 'Frackture Tibia 1/3 Upper',
-                                    'Frackture Tibia 1/3 Lower', 'Frackture Tibia 1/3 Femur', 'Frackture Collum Femur', 
-                                    'Frackture Femur 1/3 Lower', 'Frackture Hummery 1/3 Middle', 'Frackture Lumbal L2-3',
-                                    'Frackture Patela', 'Dislocation Of Enkle', 'Non');
-        } else if ($type == 'diagnosis') {
-            $data           = array('Stress', 'Costusio Cerebry', 'Dislocation  Of Enkle', 'Frackture Femur 1/3 Lower', 
-                                    'Frackture Humery 1/3 Midlle', 'Frackture Patela', 'Frackture Tibia 1/3 Lower', 
-                                    'Frackture Tibia 1/3 Upper', 'Open Frackture Collom Femur', 'Open Frackture Tibia 1/3 Middle',
-                                    'Paraplegia', 'Trauma Thorax');
-        } else if ($type == 'terapi') {
-            $data           = array('Perban', 'Obat', 'Operasi', 'Opertio', 'Fisioterapi', 'Penggantian', 'Invactive Minimum', 'Pemulihan Fisik');
-        } else if ($type == 'rehabilitas') {
-            $data           = array('Fisioterapi', 'Terapi Occupational', 'Terapi Sosial');
-        } else if ($type == 'komplikasi') {
-            $data           = array('Infeksi', 'Patah Tulang', 'Cacat', 'Stress Psikologi Pasca Bencana');
-        }
-
+        
+        $data           = $this->model->masterStatic($type);
         $index          = 1;
         foreach ($data as $row) {
             $param          = array();
@@ -61,6 +38,21 @@ class Master extends REST_Controller
 
         $response['status'] = true;
         $response['data']   = $temp;
+        $this->response($response);
+    }
+
+    public function listCountries_get() {
+        $listData       = $this->model->getCountries();
+        $response       = array();
+        if (count($listData) > 0) {
+            $response['status']     = '1';
+            $response['message']    = '';
+            $response['data']       = $listData;
+        } else {
+            $response['status']     = '0';
+            $response['message']    = 'Data tidak ditemukan !';
+        }
+
         $this->response($response);
     }
 }
