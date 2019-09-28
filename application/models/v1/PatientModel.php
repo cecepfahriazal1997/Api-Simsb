@@ -24,12 +24,6 @@ class PatientModel extends CI_Model
         return $this->db->get('history')->row();
     }
 
-    public function getProgress($patientId) {
-        $this->db->where('PatientId', $patientId);
-        $this->db->order_by('Year', 'DESC');
-        return $this->db->get('progress')->result();
-    }
-
     public function insertData($data) {
         return $this->db->insert('geninfo', $data);
     }
@@ -60,28 +54,6 @@ class PatientModel extends CI_Model
         if (!empty($id)) {
             $this->db->where('PatientId', $id);
             return $this->db->update('history', $data);
-        } else {
-            return false;
-        }
-    }
-
-    public function insertDataProgress($data) {
-        return $this->db->insert('progress', $data);
-    }
-
-    public function updateDataProgress($id, $data) {
-        if (!empty($id)) {
-            $this->db->where('id_prog', $id);
-            return $this->db->update('progress', $data);
-        } else {
-            return false;
-        }
-    }
-
-    public function deleteDataProgress($id) {
-        if (!empty($id)) {
-            $this->db->where('id_prog', $id);
-            return $this->db->delete('progress');
         } else {
             return false;
         }
