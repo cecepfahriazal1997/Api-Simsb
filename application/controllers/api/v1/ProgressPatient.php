@@ -57,6 +57,7 @@ class ProgressPatient extends REST_Controller
                 $param['SupportNm'] = $head->SupportNm;
                 $param['PatientNm'] = $head->PatientNm;
                 $param['DoctorNm']  = $head->DoctorNm;
+                $param['NurseNm']   = $head->NurseNm;
                 $param['Time']      = $head->Time;
                 $param['History']   = $tempData[$head->PatientId];
                 $responseData[]     = $param;
