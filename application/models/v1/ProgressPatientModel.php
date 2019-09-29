@@ -6,7 +6,7 @@ class ProgressPatientModel extends CI_Model
         parent::__construct();
     }
     
-    public function listProgress() {
+    public function listProgress($patientId) {
         $this->db->select(' geninfo.PatientId,
                             geninfo.PatientNm,
                             geninfo.Sex,
@@ -26,6 +26,9 @@ class ProgressPatientModel extends CI_Model
                             progress.Status,
                             progress.Remark', false);
         $this->db->join('progress', 'progress.PatientId = geninfo.PatientId', 'inner');
+        if (!empty($patientId)) {
+            $this->db->where('geninfo.PatientId', $patientId);
+        }
         $this->db->order_by('geninfo.PatientNm', 'ASC');
         return $this->db->get('geninfo')->result();
     }

@@ -73,6 +73,39 @@ class ProgressPatient extends REST_Controller
 
         $this->response($response);
     }
+
+    public function getProgressDetail_get() {
+        $response           = array();
+        $patientId          = $this->get('patientId');
+        $data               = $this->model->listProgress($patientId);
+        if (count($data) > 0) {
+            $responseData           = array();
+            foreach ($data as $row) {
+                $detail             = array();
+                $detail['id_prog']          = $row->id_prog;
+                $detail['Year']             = $row->Year;
+                $detail['Month']            = $row->Month;
+                $detail['Week']             = $row->Week;
+                $detail['Tgl']              = $row->Tgl;
+                $detail['Complication']     = $row->Complication;
+                $detail['ComplicationDtl']  = $row->ComplicationDtl;
+                $detail['Progress']         = $row->Progress;
+                $detail['Status']           = $row->Status;
+                $detail['Remark']           = $row->Remark;
+
+                $responseData[]             = $detail;
+            }
+
+            $response['status']     = '1';
+            $response['message']    = 'Data berhasil ditemukan !';
+            $response['data']       = $responseData;
+        } else {
+            $response['status']     = '0';
+            $response['message']    = 'Belum ada history progress pada pasien ini !';
+        }
+
+        $this->response($response);
+    }
     
     public function insertProgress_post() {
         $patientId          = $this->post('patientId');
