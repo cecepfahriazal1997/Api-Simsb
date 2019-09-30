@@ -23,7 +23,7 @@ class ProgressPatient extends REST_Controller
 
     public function getProgress_get() {
         $response           = array();
-        $data               = $this->model->listProgress();
+        $data               = $this->model->listProgress(null);
         if (count($data) > 0) {
             $tempData               = array();
             $headData               = array();
