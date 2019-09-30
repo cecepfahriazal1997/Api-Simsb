@@ -19,6 +19,7 @@ class ProgressPatient extends REST_Controller
     public function __construct() {
         parent::__construct();
         $this->load->model("v1/ProgressPatientModel", "model");
+        $this->load->model("v1/MasterModel", "master");
     }
 
     public function getProgress_get() {
@@ -80,15 +81,27 @@ class ProgressPatient extends REST_Controller
         $data               = $this->model->listProgress($patientId);
         if (count($data) > 0) {
             $responseData           = array();
+            $complication           = $this->master->masterStatic('komplikasi');
+            $complicationDetail     = $this->master->masterStatic('detailKomplikasi');
             foreach ($data as $row) {
-                $detail             = array();
+                $detail                     = array();
                 $detail['id_prog']          = $row->id_prog;
                 $detail['Year']             = $row->Year;
                 $detail['Month']            = $row->Month;
                 $detail['Week']             = $row->Week;
                 $detail['Tgl']              = $row->Tgl;
-                $detail['Complication']     = $row->Complication;
-                $detail['ComplicationDtl']  = $row->ComplicationDtl;
+                $detail['Complication']         = $row->Complication;
+                $detail['ComplicationLabel']    = $complication[$row->Complication > 0 ? $row->Complication - 1 : 0];
+                $detail['ComplicationDtl']      = $row->ComplicationDtl;
+                $indexDetail        = 0;
+                if ($row->ComplicationDtl == 'I') {
+                    $indexDetail    = 0;
+                } elseif ($row->ComplicationDtl == 'S') {
+                    $indexDetail    = 1;
+                } elseif ($row->ComplicationDtl == 'D') {
+                    $indexDetail    = 2;
+                }
+                $detail['ComplicationDtlLabel'] = $complicationDetail[$indexDetail];
                 $detail['Progress']         = $row->Progress;
                 $detail['Status']           = $row->Status;
                 $detail['Remark']           = $row->Remark;
