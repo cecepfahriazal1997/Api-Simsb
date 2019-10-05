@@ -23,18 +23,26 @@ class CollaborationPatient extends REST_Controller
 
     public function getCollaboration_get() {
         $response           = array();
-        $data               = $this->model->listCollaboration();
+        $data               = $this->model->listPatient();
         if (count($data) > 0) {
-            $tempData               = array();
-            $headData               = array();
+            $response['status']     = true;
+            $response['message']    = '';
+            $response['data']       = $data;
+        } else {
+            $response['status']     = false;
+            $response['message']    = 'Data tidak ditemukan !';
+        }
+
+        $this->response($response);
+    }
+    public function getCollaborationDetail_get() {
+        $patientId          = $this->get('patientId');
+        $response           = array();
+        $data               = $this->model->listCollaboration($patientId);
+        if (count($data) > 0) {
             $responseData           = array();
-            $checkId                = array();
             foreach ($data as $row) {
                 $detail             = array();
-                if (!in_array($row->PatientId, $checkId)) {
-                    $headData[]     = $row;
-                    $checkId[]      = $row->PatientId;
-                }
                 $detail['id']               = $row->id;
                 $detail['Year']             = $row->Year;
                 $detail['Month']            = $row->Month;
@@ -47,20 +55,7 @@ class CollaborationPatient extends REST_Controller
                 $detail['collaborativeD']   = $row->CollaborativeD;
                 $detail['feedback']         = $row->Feedback;
 
-                $tempData[$row->PatientId][]     = $detail;
-            }
-            
-            foreach ($headData as $head) {
-                $param                  = array();
-                $param['PatientId']     = $head->PatientId;
-                $param['Sex']           = $head->Sex;
-                $param['Age']           = $head->Age;
-                $param['SupportNm']     = $head->SupportNm;
-                $param['PatientNm']     = $head->PatientNm;
-                $param['DoctorNm']      = $head->DoctorNm;
-                $param['Time']          = $head->Time;
-                $param['Collaborative'] = $tempData[$head->PatientId];
-                $responseData[]         = $param;
+                $responseData[]             = $detail;
             }
 
             $response['status']     = '1';

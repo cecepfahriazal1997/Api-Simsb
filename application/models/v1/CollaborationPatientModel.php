@@ -5,8 +5,21 @@ class CollaborationPatientModel extends CI_Model
     public function __construct() {
         parent::__construct();
     }
+
+    public function listPatient() {
+        $this->db->select(' geninfo.PatientId,
+                            geninfo.PatientNm,
+                            geninfo.Sex,
+                            geninfo.Age,
+                            geninfo.DoctorNm,
+                            geninfo.NurseNm,
+                            geninfo.SupportNm,
+                            geninfo.Time', false);
+        $this->db->order_by('geninfo.PatientNm', 'ASC');
+        return $this->db->get('geninfo')->result();
+    }
     
-    public function listCollaboration() {
+    public function listCollaboration($patientId) {
         $this->db->select(' geninfo.PatientId,
                             geninfo.PatientNm,
                             geninfo.Sex,
@@ -28,6 +41,9 @@ class CollaborationPatientModel extends CI_Model
                             collaborationdtl.Feedback,', false);
         $this->db->join('collaboration', 'collaboration.PatientId = geninfo.PatientId', 'inner');
         $this->db->join('collaborationdtl', 'collaborationdtl.PatientId = collaboration.PatientId', 'inner');
+        if (!empty($patientId)) {
+            $this->db->where('collaboration.PatientId', $patientId);
+        }
         $this->db->group_by('collaboration.id');
         $this->db->order_by('geninfo.PatientNm', 'ASC');
         return $this->db->get('geninfo')->result();
