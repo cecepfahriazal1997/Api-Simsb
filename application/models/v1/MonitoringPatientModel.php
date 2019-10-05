@@ -25,7 +25,7 @@ class MonitoringPatientModel extends CI_Model
         if (!empty($patientId)) {
             $this->db->where('monitoring.PatientId', $patientId);
         }
-        $this->db->join('monitoring', 'monitoring.PatientId = geninfo.PatientId', 'inner');
+        $this->db->join('monitoring', 'monitoring.PatientId = geninfo.PatientId', 'left');
         $this->db->order_by('geninfo.PatientNm', 'ASC');
         return $this->db->get('geninfo')->result();
     }
