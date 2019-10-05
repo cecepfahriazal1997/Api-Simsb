@@ -6,7 +6,7 @@ class MonitoringPatientModel extends CI_Model
         parent::__construct();
     }
     
-    public function listMonitoring() {
+    public function listMonitoring($patientId) {
         $this->db->select(' geninfo.PatientId,
                             geninfo.PatientNm,
                             geninfo.Sex,
@@ -22,6 +22,9 @@ class MonitoringPatientModel extends CI_Model
                             monitoring.Tgl,
                             monitoring.Fact,
                             monitoring.Problem', false);
+        if (!empty($patientId)) {
+            $this->db->where('patientId', $patientId);
+        }
         $this->db->join('monitoring', 'monitoring.PatientId = geninfo.PatientId', 'inner');
         $this->db->order_by('geninfo.PatientNm', 'ASC');
         return $this->db->get('geninfo')->result();

@@ -26,42 +26,14 @@ class ProgressPatient extends REST_Controller
         $response           = array();
         $data               = $this->model->listProgress(null);
         if (count($data) > 0) {
-            $tempData               = array();
-            $headData               = array();
             $responseData           = array();
             $checkId                = array();
             foreach ($data as $row) {
                 $detail             = array();
                 if (!in_array($row->PatientId, $checkId)) {
-                    $headData[]     = $row;
+                    $responseData[] = $row;
                     $checkId[]      = $row->PatientId;
                 }
-                $detail['id_prog']          = $row->id_prog;
-                $detail['Year']             = $row->Year;
-                $detail['Month']            = $row->Month;
-                $detail['Week']             = $row->Week;
-                $detail['Tgl']              = $row->Tgl;
-                $detail['Complication']     = $row->Complication;
-                $detail['ComplicationDtl']  = $row->ComplicationDtl;
-                $detail['Progress']         = $row->Progress;
-                $detail['Status']           = $row->Status;
-                $detail['Remark']           = $row->Remark;
-
-                $tempData[$row->PatientId][]     = $detail;
-            }
-            
-            foreach ($headData as $head) {
-                $param              = array();
-                $param['PatientId'] = $head->PatientId;
-                $param['Sex']       = $head->Sex;
-                $param['Age']       = $head->Age;
-                $param['SupportNm'] = $head->SupportNm;
-                $param['PatientNm'] = $head->PatientNm;
-                $param['DoctorNm']  = $head->DoctorNm;
-                $param['NurseNm']   = $head->NurseNm;
-                $param['Time']      = $head->Time;
-                $param['History']   = $tempData[$head->PatientId];
-                $responseData[]     = $param;
             }
 
             $response['status']     = '1';

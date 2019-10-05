@@ -22,19 +22,39 @@ class MonitoringPatient extends REST_Controller
     }
 
     public function getMonitoring_get() {
-        $response           = array();
-        $data                   = $this->model->listMonitoring();
+        $response               = array();
+        $data                   = $this->model->listMonitoring(null);
         if (count($data) > 0) {
-            $tempData               = array();
-            $headData               = array();
             $responseData           = array();
             $checkId                = array();
             foreach ($data as $row) {
                 $detail             = array();
                 if (!in_array($row->PatientId, $checkId)) {
-                    $headData[]     = $row;
+                    $responseData[] = $row;
                     $checkId[]      = $row->PatientId;
                 }
+            }
+            
+            $response['status']     = '1';
+            $response['message']    = 'Data berhasil ditemukan !';
+            $response['data']       = $responseData;
+        } else {
+            $response['status']     = '0';
+            $response['message']    = 'Belum ada data monitoring pada pasien ini !';
+        }
+
+        $this->response($response);
+    }
+
+    public function getMonitoringDetail_get() {
+        $patientId              = $this->get('patientId');
+        $response               = array();
+        $data                   = $this->model->listMonitoring($patientId);
+        if (count($data) > 0) {
+            $tempData               = array();
+            $responseData           = array();
+            foreach ($data as $row) {
+                $detail             = array();
                 $detail['id']       = $row->id;
                 $detail['Year']     = $row->Year;
                 $detail['Month']    = $row->Month;
@@ -43,20 +63,7 @@ class MonitoringPatient extends REST_Controller
                 $detail['Fact']     = $row->Fact;
                 $detail['Problem']  = $row->Problem;
 
-                $tempData[$row->PatientId][]     = $detail;
-            }
-            
-            foreach ($headData as $head) {
-                $param              = array();
-                $param['PatientId'] = $head->PatientId;
-                $param['Sex']       = $head->Sex;
-                $param['Age']       = $head->Age;
-                $param['SupportNm'] = $head->SupportNm;
-                $param['PatientNm'] = $head->PatientNm;
-                $param['DoctorNm']  = $head->DoctorNm;
-                $param['Time']      = $head->Time;
-                $param['Monitoring']= $tempData[$head->PatientId];
-                $responseData[]     = $param;
+                $responseData[]     = $detail;
             }
 
             $response['status']     = '1';
