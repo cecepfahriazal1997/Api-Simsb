@@ -23,7 +23,7 @@ class MonitoringPatientModel extends CI_Model
                             monitoring.Fact,
                             monitoring.Problem', false);
         if (!empty($patientId)) {
-            $this->db->where('patientId', $patientId);
+            $this->db->where('monitoring.PatientId', $patientId);
         }
         $this->db->join('monitoring', 'monitoring.PatientId = geninfo.PatientId', 'inner');
         $this->db->order_by('geninfo.PatientNm', 'ASC');
