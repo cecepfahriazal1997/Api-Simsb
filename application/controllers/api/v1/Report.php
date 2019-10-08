@@ -40,6 +40,8 @@ class Report extends REST_Controller
                     $param['name']      = $row->PatientNm;
                     $param['doctor']    = $row->DoctorNm;
                     $param['nurse']     = $row->NurseNm;
+                    $param['gender']    = $row->Sex;
+                    $param['age']       = $row->Age;
                     $param['progress']  = array();
                     $tempData[]         = $param;
                     $checkId[]          = $row->PatientId;

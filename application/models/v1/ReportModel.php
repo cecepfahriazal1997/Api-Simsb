@@ -11,6 +11,8 @@ class ReportModel extends CI_Model
                             geninfo.PatientNm,
                             geninfo.DoctorNm,
                             geninfo.NurseNm,
+                            geninfo.Sex,
+                            geninfo.Age,
                             progress.id_prog as progressId,
                             progress.`Year`,
                             progress.`Month`,
