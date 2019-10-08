@@ -16,7 +16,7 @@ class ReportModel extends CI_Model
                             progress.`Month`,
                             progress.`Week`,
                             progress.Tgl,
-                            Progress.Complication,
+                            progress.Complication,
                             progress.Progress,
                             progress.`Status`,
                             progress.Remark', false);
