@@ -49,6 +49,7 @@ class Report extends REST_Controller
 
                 $detail                 = array();
                 $detail['id']           = $row->progressId;
+                $detail['year']         = $row->Year;
                 $detail['month']        = $row->Month;
                 $detail['date']         = date('d F Y', strtotime($row->Year.'-'.$row->Month.'-'.$row->Tgl));
                 $detail['complication'] = $complication[$row->Complication > 0 ? $row->Complication - 1 : 0];
