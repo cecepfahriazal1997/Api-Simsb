@@ -43,6 +43,7 @@ class Report extends REST_Controller
                     $param['gender']    = $row->Sex;
                     $param['age']       = $row->Age;
                     $param['progress']  = array();
+                    $param['year']      = array();
                     $tempData[]         = $param;
                     $checkId[]          = $row->PatientId;
                 }
@@ -59,6 +60,7 @@ class Report extends REST_Controller
             }
 
             foreach ($tempData as $row) {
+                $row['year']        = array_unique(array_column($listProgress[$row['id']], 'year'));
                 $row['progress']    = $listProgress[$row['id']];
                 $responseData[]     = $row;
             }
