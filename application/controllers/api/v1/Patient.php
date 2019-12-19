@@ -55,6 +55,7 @@ class Patient extends REST_Controller
         $nurseName          = $this->post('nurseName');
         $supportName        = $this->post('supportName');
         $remark             = $this->post('remark');
+        $phoneDoctor        = $this->post('phoneDoctor');
         $userInput          = $this->post('userInput');
         $response           = array();
 
@@ -77,6 +78,7 @@ class Patient extends REST_Controller
             $insert['Remark']       = $remark;
             $insert['UserID']       = $userInput;
             $insert['var1']         = $number;
+            $insert['DoctorWA']     = $phoneDoctor;
 
             $inserData              = $this->model->insertData($insert);
             if ($inserData) {
@@ -107,6 +109,7 @@ class Patient extends REST_Controller
         $nurseName          = $this->post('nurseName');
         $supportName        = $this->post('supportName');
         $remark             = $this->post('remark');
+        $phoneDoctor        = $this->post('phoneDoctor');
         $response           = array();
 
         $cekData            = $this->model->getPatientById($patientId);
@@ -124,6 +127,7 @@ class Patient extends REST_Controller
             $update['NurseNm']      = $nurseName;
             $update['SupportNm']    = $supportName;
             $update['Remark']       = $remark;
+            $update['DoctorWA']     = $phoneDoctor;
 
             $inserData              = $this->model->updateData($patientId, $update);
             if ($inserData) {
