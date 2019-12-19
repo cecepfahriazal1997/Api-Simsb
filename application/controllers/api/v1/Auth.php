@@ -36,6 +36,7 @@ class Auth extends REST_Controller
                 $tempData['name']    		= $member->nama;
                 $tempData['email']          = $member->email;
                 $tempData['phone']    		= (String) $member->telepon;
+                $tempData['image']          = 'http://atp-sb-medis.com/image/'.$member->foto;
 
                 $update                     = array();
                 $update["jam_login"]        = date("H:i:s");
