@@ -110,7 +110,7 @@ class Dashboard extends REST_Controller
         for ($i = 0; $i < count($title); $i++) {
             $param          = array();
             $param['title'] = $title[$i];
-            $param['velue'] = $value[$i];
+            $param['image'] = $image[$i];
             $tempData[]     = $param;
         }
         $response['status']     = '1';
