@@ -67,7 +67,7 @@ class Dashboard extends REST_Controller
         $description    = array('Petunjuk pemakaian dalam Sistem Informasi Medis Bencana, mencakup dari memasukkan data, mengedit data, serta menghapus data.',
                             'Bagan atau diagram alir dari Sistem Informasi Medis Bencana');
         $file           = array('SIMPB_manual.doc', 'FlowChartSIMPB.doc');
-        $pathFile       = 'http://128.199.219.185/simsb/download/';
+        $pathFile       = 'http://atp-sb-medis.com/download/';
         $tempData       = array();
 
         for ($i = 0; $i < count($title); $i++) {
@@ -88,6 +88,23 @@ class Dashboard extends REST_Controller
     public function contactUs_get() {
         $title          = array('Telepon', 'Email', 'Fax');
         $value          = array('021-8906411 Ext 1222', 'info@simb.co.id', '021-8906411');
+        $tempData       = array();
+
+        for ($i = 0; $i < count($title); $i++) {
+            $param          = array();
+            $param['title'] = $title[$i];
+            $param['velue'] = $value[$i];
+            $tempData[]     = $param;
+        }
+        $response['status']     = '1';
+        $response['message']    = '';
+        $response['data']       = $tempData;
+        $this->response($response);
+    }
+
+    public function prepareDisaster_get() {
+        $title          = array('Saat Bencana 1', 'Saat Bencana 2');
+        $image          = array('http://atp-sb-medis.com/image/bencana_1.jpg', 'http://atp-sb-medis.com/image/bencana_1.jpg');
         $tempData       = array();
 
         for ($i = 0; $i < count($title); $i++) {
