@@ -104,7 +104,10 @@ class Dashboard extends REST_Controller
 
     public function prepareDisaster_get() {
         $title          = array('Saat Bencana 1', 'Saat Bencana 2');
-        $image          = array('http://atp-sb-medis.com/image/bencana_1.jpg', 'http://atp-sb-medis.com/image/bencana_1.jpg');
+        $image          = array(
+                            '<img src="http://atp-sb-medis.com/image/bencana_1.jpg"/>',
+                            '<img src="http://atp-sb-medis.com/image/bencana_1.jpg"/>'
+                        );
         $tempData       = array();
 
         for ($i = 0; $i < count($title); $i++) {
