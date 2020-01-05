@@ -159,6 +159,18 @@ class Dashboard extends REST_Controller
                                 .active, .accordion:hover {
                                     background-color: #ccc; 
                                 }
+
+                                .accordion:after {
+                                    content: '\02795';
+                                    font-size: 13px;
+                                    color: #777;
+                                    float: right;
+                                    margin-left: 5px;
+                                }
+                                  
+                                .active:after {
+                                    content: '\2796';
+                                }
                                 
                                 .panel {
                                     padding: 0 18px;
