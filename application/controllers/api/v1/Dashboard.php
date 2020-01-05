@@ -150,11 +150,6 @@ class Dashboard extends REST_Controller
                                 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
                                 <script
                                     src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
-                                <style type='text/css'>
-                                    .bs-example {
-                                        margin: 20px;
-                                    }
-                                </style>
                             </head>
                             <body>
                                 <div class='bs-example'>
@@ -167,15 +162,59 @@ class Dashboard extends REST_Controller
                                                     data-parent='#accordion'
                                                     href='#collapseOne'>
                                                     <h4 class='panel-title'>
-                                                        1. What is HTML?
+                                                        1. Pemeriksaan Primer
                                                     </h4>
                                                 </a>
                                             </div>
                                             <div id='collapseOne' class='panel-collapse collapse in'>
                                                 <div class='panel-body'>
-                                                    <p>HTML stands for HyperText Markup Language. HTML is the standard markup
-                                                        language for describing the structure of web pages.
-                                                        <a href='https://www.tutorialrepublic.com/html-tutorial/' target='_blank'>Learn more.</a>
+                                                    <p>
+                                                        Pemeriksaan primer adalah deteksi cepat dan koreksi segera terhadap kondisi yang mengancam jiwa.
+                                                        <b align='center'>Cara Pelaksanaannya :</b>
+                                                        <ul>
+                                                            <li>
+                                                                Jalan Nafas <br>
+                                                                Lihat, dengar Raba <br>
+                                                                Atasi segera, bebaskan jalan nafas <br>
+                                                                Penghisapan
+                                                            </li>
+                                                            <li>
+                                                                Pernafasan <br>
+                                                                Apakah pertukaran hawa panas adekuat? <br>
+                                                                a. Tidak ada, lakukan bantuan nafas <br>
+                                                                b. Frekuansi <br>
+                                                                c. Kualitas <br>
+                                                                d. Teratur <br>
+                                                                e. Ujung kuku biru atau tidak
+                                                            </li>
+                                                            <li>Perdarahan <br>
+                                                                - Diluar : <br>
+                                                                Hentikan segera : <br>
+                                                                <ul>
+                                                                    <li>Dengan bebat tekan pada luka</li>
+                                                                    <li>Bagian luka yang ditinggikan</li>
+                                                                    <li>Kompress es</li>
+                                                                    <li>Tourniquet (hanya pada luka khusus)</li>
+                                                                </ul>
+                                                                <br>
+                                                                - Didalam :
+                                                                <ul>
+                                                                    <li>Kirim segera</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                Tulang Belakang <br>
+                                                                Apakah sadar? <br>
+                                                                Adakah trauma kepala? <br>
+                                                                Stabilisasi leher dan tulang belakang <br>
+                                                                Sebelum dikirim <br>
+                                                            </li>
+                                                            <li>
+                                                                Shock <br>
+                                                                Tanda-tanda shock <br>
+                                                                Stabilitas segera kirim <br>
+                                                            </li>
+                                                        </ul>
                                                     </p>
                                                 </div>
                                             </div>
@@ -188,17 +227,39 @@ class Dashboard extends REST_Controller
                                                     data-parent='#accordion'
                                                     href='#collapseTwo'>
                                                     <h4 class='panel-title'>
-                                                        1. What is HTML?
+                                                        2. Pemeriksaan Sekunder
                                                     </h4>
                                                 </a>
                                             </div>
                                             <div id='collapseTwo' class='panel-collapse collapse'>
                                                 <div class='panel-body'>
-                                                    <p>Bootstrap is a sleek, intuitive, and powerful front-end framework for faster
-                                                        and easier web development. It is a collection of CSS and HTML conventions.
-                                                        <a
-                                                            href='https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/'
-                                                            target='_blank'>Learn more.</a>
+                                                    <p>
+                                                        Pemeriksaan sekunder adalah mencari perubahan-perubahan yang dapat berkembang menjadi lebih
+                                                        gawat dan dapat mengancamjiwa apabila tidak segera diatasi.
+
+                                                        <b align='center'>Cara Pelaksanaannya :</b>
+                                                        <ul>
+                                                            <li>
+                                                                Periksa kondisi menyeluruh
+                                                                1. Posisi saat ditemukan
+                                                                2. Tingkat kesadaran
+                                                                3. Sikap umum dan keluhan
+                                                                4. Ruda paksa, kelainan
+                                                                5. Keadaan sulit
+                                                            </li>
+                                                            <li>
+                                                                Periksa kepala dan leher <br>
+                                                                Rambut, kulit kepala, telinga, mata, hidung, mulut, ada kejang otot leher/tidak
+                                                            </li>
+                                                            <li>
+                                                                Periksa dada dan perut <br>
+                                                                Ada luka di dada, kelainan bentuk, perut tegang
+                                                            </li>
+                                                            <li>
+                                                                Periksa anggota gerak atas dan bawah <br>
+                                                                Luka, bengkak, nyeri untuk gerak
+                                                            </li>
+                                                        </ul>
                                                     </p>
                                                 </div>
                                             </div>
