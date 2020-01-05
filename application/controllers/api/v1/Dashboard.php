@@ -139,150 +139,177 @@ class Dashboard extends REST_Controller
                                 <li>Penanganan dan pemindahannya bersifat TERAKHIR</li>
                             </ul>",
                             "<img src='http://atp-sb-medis.com/image/informasi_5_1.jpg'/><br><br><img src='http://atp-sb-medis.com/image/informasi_5_2.jpg'/>",
-                            "<html lang='en'>
-                            <head>
-                                <meta charset='utf-8'>
-                                <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-                                <meta name='viewport' content='width=device-width, initial-scale=1'>
-                                <link
-                                    rel='stylesheet'
-                                    href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
-                                <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
-                                <script
-                                    src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
-                                <style>
-                                    .accordion-menu > a {
-                                        display: block;
-                                        position: relative;
-                                    }
-                                    .accordion-menu > a:after {
-                                        content: '\f078';
-                                        font-family: 'FontAwesome';
-                                        position: absolute;
-                                        right: 0;
-                                    }
-                                    .accordion-menu > a[aria-expanded='true']:after {
-                                        content: '\f077';
-                                    }
-                                </style>
-                            </head>
-                            <body>
-                                <div class='bs-example'>
-                                    <div class='panel-group' id='accordion'>
-                                        <div class='panel panel-default'>
-                                            <div class='panel-heading'>
-                                                <a
-                                                    style='text-decoration:none'
-                                                    data-toggle='collapse'
-                                                    data-parent='#accordion'
-                                                    href='#collapseOne'>
-                                                    <h4 class='panel-title'>
+                            "
+                            <html>
+                                <head>
+                                    <link
+                                        rel='stylesheet'
+                                        href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
+                                    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+                                    <script
+                                        src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>
+                                    <link
+                                        rel='stylesheet'
+                                        href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+                                    <style>
+                                        .accordion-menu > a {
+                                            display: block;
+                                            position: relative;
+                                            margin-top: 8px;
+                                            font-size: 12pt;
+                                        }
+
+                                        .accordion-menu > a:after {
+                                            content: '\f078';
+                                            font-family: 'FontAwesome';
+                                            position: absolute;
+                                            right: 0;
+                                        }
+
+                                        .accordion-menu > a[aria-expanded='true']:after {
+                                            content: '\f077';
+                                        }
+
+                                        a {
+                                            text-decoration: none !important;
+                                        }
+                                    </style>
+                                </head>
+                                <body>
+                                    <div id='accordion'>
+                                        <div class='card' style='width: 30rem;'>
+                                            <div class='card-header'>
+                                                <h5 class='accordion-menu'>
+                                                    <a
+                                                        role='button'
+                                                        data-toggle='collapse'
+                                                        href='#collapse-13'
+                                                        aria-expanded='false'
+                                                        aria-controls='collapse-13'
+                                                        class='collapsed'>
                                                         1. Pemeriksaan Primer
-                                                    </h4>
-                                                </a>
+                                                    </a>
+                                                </h5>
                                             </div>
-                                            <div id='collapseOne' class='panel-collapse collapse in'>
-                                                <div class='panel-body'>
-                                                    <p>
-                                                        Pemeriksaan primer adalah deteksi cepat dan koreksi segera terhadap kondisi yang mengancam jiwa.
-                                                        <b align='center'>Cara Pelaksanaannya :</b>
-                                                        <ul>
-                                                            <li>
-                                                                Jalan Nafas <br>
-                                                                Lihat, dengar Raba <br>
-                                                                Atasi segera, bebaskan jalan nafas <br>
-                                                                Penghisapan
-                                                            </li>
-                                                            <li>
-                                                                Pernafasan <br>
-                                                                Apakah pertukaran hawa panas adekuat? <br>
-                                                                a. Tidak ada, lakukan bantuan nafas <br>
-                                                                b. Frekuansi <br>
-                                                                c. Kualitas <br>
-                                                                d. Teratur <br>
-                                                                e. Ujung kuku biru atau tidak
-                                                            </li>
-                                                            <li>Perdarahan <br>
-                                                                - Diluar : <br>
-                                                                Hentikan segera : <br>
-                                                                <ul>
-                                                                    <li>Dengan bebat tekan pada luka</li>
-                                                                    <li>Bagian luka yang ditinggikan</li>
-                                                                    <li>Kompress es</li>
-                                                                    <li>Tourniquet (hanya pada luka khusus)</li>
-                                                                </ul>
-                                                                <br>
-                                                                - Didalam :
-                                                                <ul>
-                                                                    <li>Kirim segera</li>
-                                                                </ul>
-                                                            </li>
-                                                            <li>
-                                                                Tulang Belakang <br>
-                                                                Apakah sadar? <br>
-                                                                Adakah trauma kepala? <br>
-                                                                Stabilisasi leher dan tulang belakang <br>
-                                                                Sebelum dikirim <br>
-                                                            </li>
-                                                            <li>
-                                                                Shock <br>
-                                                                Tanda-tanda shock <br>
-                                                                Stabilitas segera kirim <br>
-                                                            </li>
-                                                        </ul>
-                                                    </p>
+                                            <div id='collapse-13' class='collapse' data-parent='#accordion' style=''>
+                                                <div class='card-body'>
+                                                    Pemeriksaan primer adalah deteksi cepat dan koreksi segera terhadap kondisi yang
+                                                    mengancam jiwa.
+                                                    <br>
+                                                    <b>Cara Pelaksanaannya :</b>
+                                                    <ul>
+                                                        <li>
+                                                            Jalan Nafas
+                                                            <br>
+                                                            Lihat, dengar Raba
+                                                            <br>
+                                                            Atasi segera, bebaskan jalan nafas
+                                                            <br>
+                                                            Penghisapan
+                                                        </li>
+                                                        <li>
+                                                            Pernafasan
+                                                            <br>
+                                                            Apakah pertukaran hawa panas adekuat?
+                                                            <br>
+                                                            a. Tidak ada, lakukan bantuan nafas
+                                                            <br>
+                                                            b. Frekuansi
+                                                            <br>
+                                                            c. Kualitas
+                                                            <br>
+                                                            d. Teratur
+                                                            <br>
+                                                            e. Ujung kuku biru atau tidak
+                                                        </li>
+                                                        <li>Perdarahan
+                                                            <br>
+                                                            - Diluar :
+                                                            <br>
+                                                            Hentikan segera :
+                                                            <br>
+                                                            <ul>
+                                                                <li>Dengan bebat tekan pada luka</li>
+                                                                <li>Bagian luka yang ditinggikan</li>
+                                                                <li>Kompress es</li>
+                                                                <li>Tourniquet (hanya pada luka khusus)</li>
+                                                            </ul>
+                                                            <br>
+                                                            - Didalam :
+                                                            <ul>
+                                                                <li>Kirim segera</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            Tulang Belakang
+                                                            <br>
+                                                            Apakah sadar?
+                                                            <br>
+                                                            Adakah trauma kepala?
+                                                            <br>
+                                                            Stabilisasi leher dan tulang belakang
+                                                            <br>
+                                                            Sebelum dikirim
+                                                            <br>
+                                                        </li>
+                                                        <li>
+                                                            Shock
+                                                            <br>
+                                                            Tanda-tanda shock
+                                                            <br>
+                                                            Stabilitas segera kirim
+                                                            <br>
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class='panel panel-default'>
-                                            <div class='panel-heading'>
-                                                <a
-                                                    style='text-decoration:none'
-                                                    data-toggle='collapse'
-                                                    data-parent='#accordion'
-                                                    href='#collapseTwo'>
-                                                    <h4 class='panel-title'>
+                                            <div class='card-header'>
+                                                <h5 class='accordion-menu'>
+                                                    <a
+                                                        role='button'
+                                                        data-toggle='collapse'
+                                                        href='#collapse-14'
+                                                        aria-expanded='false'
+                                                        aria-controls='collapse-14'
+                                                        class='collapsed'>
                                                         2. Pemeriksaan Sekunder
-                                                    </h4>
-                                                </a>
+                                                    </a>
+                                                </h5>
                                             </div>
-                                            <div id='collapseTwo' class='panel-collapse collapse'>
-                                                <div class='panel-body'>
-                                                    <p>
-                                                        Pemeriksaan sekunder adalah mencari perubahan-perubahan yang dapat berkembang menjadi lebih
-                                                        gawat dan dapat mengancamjiwa apabila tidak segera diatasi.
+                                            <div id='collapse-14' class='collapse' data-parent='#accordion' style=''>
+                                                <div class='card-body'>
+                                                    Pemeriksaan sekunder adalah mencari perubahan-perubahan yang dapat berkembang
+                                                    menjadi lebih gawat dan dapat mengancamjiwa apabila tidak segera diatasi.
 
-                                                        <b align='center'>Cara Pelaksanaannya :</b>
-                                                        <ul>
-                                                            <li>
-                                                                Periksa kondisi menyeluruh
-                                                                1. Posisi saat ditemukan
-                                                                2. Tingkat kesadaran
-                                                                3. Sikap umum dan keluhan
-                                                                4. Ruda paksa, kelainan
-                                                                5. Keadaan sulit
-                                                            </li>
-                                                            <li>
-                                                                Periksa kepala dan leher <br>
-                                                                Rambut, kulit kepala, telinga, mata, hidung, mulut, ada kejang otot leher/tidak
-                                                            </li>
-                                                            <li>
-                                                                Periksa dada dan perut <br>
-                                                                Ada luka di dada, kelainan bentuk, perut tegang
-                                                            </li>
-                                                            <li>
-                                                                Periksa anggota gerak atas dan bawah <br>
-                                                                Luka, bengkak, nyeri untuk gerak
-                                                            </li>
-                                                        </ul>
-                                                    </p>
+                                                    <b align='center'>Cara Pelaksanaannya :</b>
+                                                    <ul>
+                                                        <li>
+                                                            Periksa kondisi menyeluruh 1. Posisi saat ditemukan 2. Tingkat kesadaran 3.
+                                                            Sikap umum dan keluhan 4. Ruda paksa, kelainan 5. Keadaan sulit
+                                                        </li>
+                                                        <li>
+                                                            Periksa kepala dan leher
+                                                            <br>
+                                                            Rambut, kulit kepala, telinga, mata, hidung, mulut, ada kejang otot leher/tidak
+                                                        </li>
+                                                        <li>
+                                                            Periksa dada dan perut
+                                                            <br>
+                                                            Ada luka di dada, kelainan bentuk, perut tegang
+                                                        </li>
+                                                        <li>
+                                                            Periksa anggota gerak atas dan bawah
+                                                            <br>
+                                                            Luka, bengkak, nyeri untuk gerak
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </body>
-                        </html>"
+                                </body>
+                            </html>
+                            "
                         );
         $tempData       = array();
 
