@@ -282,8 +282,8 @@ class Dashboard extends REST_Controller
                                                 <div class='card-body'>
                                                     Pemeriksaan sekunder adalah mencari perubahan-perubahan yang dapat berkembang
                                                     menjadi lebih gawat dan dapat mengancamjiwa apabila tidak segera diatasi.
-
-                                                    <b align='center'>Cara Pelaksanaannya :</b>
+                                                    <br>
+                                                    <b>Cara Pelaksanaannya :</b>
                                                     <ul>
                                                         <li>
                                                             Periksa kondisi menyeluruh 1. Posisi saat ditemukan 2. Tingkat kesadaran 3.
