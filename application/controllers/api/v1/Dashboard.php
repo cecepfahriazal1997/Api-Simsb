@@ -154,27 +154,14 @@ class Dashboard extends REST_Controller
                                 }
                                 
                                 .active, .accordion:hover {
-                                    background-color: #ccc;
-                                }
-                                
-                                .accordion:after {
-                                content: '\002B';
-                                color: #777;
-                                font-weight: bold;
-                                float: right;
-                                margin-left: 5px;
-                                }
-                                
-                                .active:after {
-                                    content: '\2212';
+                                    background-color: #ccc; 
                                 }
                                 
                                 .panel {
                                     padding: 0 18px;
+                                    display: none;
                                     background-color: white;
-                                    max-height: 0;
                                     overflow: hidden;
-                                    transition: max-height 0.2s ease-out;
                                 }
                             </style>
 
