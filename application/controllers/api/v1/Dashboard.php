@@ -258,6 +258,9 @@ class Dashboard extends REST_Controller
                                 var i;
                     
                                 for (i = 0; i < acc.length; i++) {
+                                    if (i == 0)
+                                        acc[i].click();
+                                        
                                     acc[i].addEventListener('click', function () {
                                         this
                                             .classList
