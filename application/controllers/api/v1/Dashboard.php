@@ -150,6 +150,21 @@ class Dashboard extends REST_Controller
                                 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
                                 <script
                                     src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+                                <style>
+                                    .accordion-menu > a {
+                                        display: block;
+                                        position: relative;
+                                    }
+                                    .accordion-menu > a:after {
+                                        content: '\f078';
+                                        font-family: 'FontAwesome';
+                                        position: absolute;
+                                        right: 0;
+                                    }
+                                    .accordion-menu > a[aria-expanded='true']:after {
+                                        content: '\f077';
+                                    }
+                                </style>
                             </head>
                             <body>
                                 <div class='bs-example'>
