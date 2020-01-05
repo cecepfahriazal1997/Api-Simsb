@@ -192,7 +192,7 @@ class Dashboard extends REST_Controller
                                                     </a>
                                                 </h5>
                                             </div>
-                                            <div id='collapse-13' class='collapse' data-parent='#accordion' style=''>
+                                            <div id='collapse-13' data-parent='#accordion' style=''>
                                                 <div class='card-body'>
                                                     Pemeriksaan primer adalah deteksi cepat dan koreksi segera terhadap kondisi yang
                                                     mengancam jiwa.
@@ -278,7 +278,7 @@ class Dashboard extends REST_Controller
                                                     </a>
                                                 </h5>
                                             </div>
-                                            <div id='collapse-14' data-parent='#accordion' style=''>
+                                            <div id='collapse-14' class='collapse' data-parent='#accordion' style=''>
                                                 <div class='card-body'>
                                                     Pemeriksaan sekunder adalah mencari perubahan-perubahan yang dapat berkembang
                                                     menjadi lebih gawat dan dapat mengancamjiwa apabila tidak segera diatasi.
