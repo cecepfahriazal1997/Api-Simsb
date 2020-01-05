@@ -139,7 +139,10 @@ class Dashboard extends REST_Controller
                                 <li>Penanganan dan pemindahannya bersifat TERAKHIR</li>
                             </ul>",
                             "<img src='http://atp-sb-medis.com/image/informasi_5_1.jpg'/><br><br><img src='http://atp-sb-medis.com/image/informasi_5_2.jpg'/>",
-                            "<style>
+                            "
+                            <html>
+                            <head>
+                            <style>
                                 .accordion {
                                     background-color: #eee;
                                     color: #444;
@@ -164,7 +167,8 @@ class Dashboard extends REST_Controller
                                     overflow: hidden;
                                 }
                             </style>
-
+                            </head>
+                            <body>
                             <button class='accordion'>Pemeriksaan Primer</button>
                             <div class='panel'>
                                 <p>
@@ -266,7 +270,9 @@ class Dashboard extends REST_Controller
                                         }
                                     });
                                 }
-                            </script>"
+                            </script>
+                        </body>
+                        </html>"
                         );
         $tempData       = array();
 
