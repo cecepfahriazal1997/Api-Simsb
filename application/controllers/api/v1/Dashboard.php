@@ -159,6 +159,18 @@ class Dashboard extends REST_Controller
                                 .active, .accordion:hover {
                                     background-color: #ccc; 
                                 }
+
+                                .accordion:after {
+                                    content: '\002B';
+                                    color: #777;
+                                    font-weight: bold;
+                                    float: right;
+                                    margin-left: 5px;
+                                }
+
+                                .active:after {
+                                    content: '\002D';
+                                }
                                 
                                 .panel {
                                     padding: 0 18px;
@@ -169,7 +181,7 @@ class Dashboard extends REST_Controller
                             </style>
                             </head>
                             <body>
-                            <button class='accordion'>Pemeriksaan Primer</button>
+                            <button class='accordion active'>Pemeriksaan Primer</button>
                             <div class='panel'>
                                 <p>
                                     Pemeriksaan primer adalah deteksi cepat dan koreksi segera terhadap kondisi yang mengancam jiwa.
