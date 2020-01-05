@@ -177,7 +177,7 @@ class Dashboard extends REST_Controller
                                 </head>
                                 <body>
                                     <div id='accordion'>
-                                        <div class='card' style='width: 30rem;'>
+                                        <div class='card'>
                                             <div class='card-header'>
                                                 <h5 class='accordion-menu'>
                                                     <a
@@ -186,7 +186,8 @@ class Dashboard extends REST_Controller
                                                         href='#collapse-13'
                                                         aria-expanded='false'
                                                         aria-controls='collapse-13'
-                                                        class='collapsed'>
+                                                        class='collapsed'
+                                                        style='text-decoration: none'>
                                                         1. Pemeriksaan Primer
                                                     </a>
                                                 </h5>
@@ -271,7 +272,8 @@ class Dashboard extends REST_Controller
                                                         href='#collapse-14'
                                                         aria-expanded='false'
                                                         aria-controls='collapse-14'
-                                                        class='collapsed'>
+                                                        class='collapsed'
+                                                        style='text-decoration: none'>
                                                         2. Pemeriksaan Sekunder
                                                     </a>
                                                 </h5>
