@@ -138,7 +138,7 @@ class Dashboard extends REST_Controller
                                 <li>Tidak perlu segera</li>
                                 <li>Penanganan dan pemindahannya bersifat TERAKHIR</li>
                             </ul>",
-                            "<img src='http://atp-sb-medis.com/image/informasi_5_1.jpg'/><br><img src='http://atp-sb-medis.com/image/informasi_5_1.jpg'/>",
+                            "<img src='http://atp-sb-medis.com/image/informasi_5_1.jpg'/><br><br><img src='http://atp-sb-medis.com/image/informasi_5_2.jpg'/>",
                             "<html>
                             <head>
                                 <meta name='viewport' content='width=device-width, initial-scale=1'>
