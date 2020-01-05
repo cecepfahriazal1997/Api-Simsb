@@ -139,85 +139,147 @@ class Dashboard extends REST_Controller
                                 <li>Penanganan dan pemindahannya bersifat TERAKHIR</li>
                             </ul>",
                             "<img src='http://atp-sb-medis.com/image/informasi_5_1.jpg'/><br><br><img src='http://atp-sb-medis.com/image/informasi_5_2.jpg'/>",
-                            "<html>
-                            <head>
-                                <meta name='viewport' content='width=device-width, initial-scale=1'>
-                                <style>
-                                    .accordion {
-                                        background-color: #eee;
-                                        color: #444;
-                                        cursor: pointer;
-                                        padding: 18px;
-                                        width: 100%;
-                                        border: none;
-                                        text-align: left;
-                                        outline: none;
-                                        font-size: 15px;
-                                        transition: 0.4s;
-                                    }
-                        
-                                    .accordion:hover,
-                                    .active {
-                                        background-color: #ccc;
-                                    }
-                        
-                                    .panel {
-                                        padding: 0 18px;
-                                        display: none;
-                                        background-color: white;
-                                        overflow: hidden;
-                                    }
-                                </style>
-                            </head>
-                            <body>
-                        
-                                <h2>Accordion</h2>
-                        
-                                <button class='accordion'>Section 1</button>
-                                <div class='panel'>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat.</p>
-                                </div>
-                        
-                                <button class='accordion'>Section 2</button>
-                                <div class='panel'>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat.</p>
-                                </div>
-                        
-                                <button class='accordion'>Section 3</button>
-                                <div class='panel'>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat.</p>
-                                </div>
-                        
-                                <script>
-                                    var acc = document.getElementsByClassName('accordion');
-                                    var i;
-                        
-                                    for (i = 0; i < acc.length; i++) {
-                                        acc[i].addEventListener('click', function () {
-                                            this
-                                                .classList
-                                                .toggle('active');
-                                            var panel = this.nextElementSibling;
-                                            if (panel.style.display === 'block') {
-                                                panel.style.display = 'none';
-                                            } else {
-                                                panel.style.display = 'block';
-                                            }
-                                        });
-                                    }
-                                </script>
-                        
-                            </body>
-                        </html>"
+                            "<style>
+                                .accordion {
+                                    background-color: #eee;
+                                    color: #444;
+                                    cursor: pointer;
+                                    padding: 18px;
+                                    width: 100%;
+                                    border: none;
+                                    text-align: left;
+                                    outline: none;
+                                    font-size: 15px;
+                                    transition: 0.4s;
+                                }
+                                
+                                .active, .accordion:hover {
+                                    background-color: #ccc;
+                                }
+                                
+                                .accordion:after {
+                                content: '\002B';
+                                color: #777;
+                                font-weight: bold;
+                                float: right;
+                                margin-left: 5px;
+                                }
+                                
+                                .active:after {
+                                    content: '\2212';
+                                }
+                                
+                                .panel {
+                                    padding: 0 18px;
+                                    background-color: white;
+                                    max-height: 0;
+                                    overflow: hidden;
+                                    transition: max-height 0.2s ease-out;
+                                }
+                            </style>
+
+                            <button class='accordion'>Pemeriksaan Primer</button>
+                            <div class='panel'>
+                                <p>
+                                    Pemeriksaan primer adalah deteksi cepat dan koreksi segera terhadap kondisi yang mengancam jiwa.
+                                    <b align='center'>Cara Pelaksanaannya :</b>
+                                    <ul>
+                                        <li>
+                                            Jalan Nafas <br>
+                                            Lihat, dengar Raba <br>
+                                            Atasi segera, bebaskan jalan nafas <br>
+                                            Penghisapan
+                                        </li>
+                                        <li>
+                                            Pernafasan <br>
+                                            Apakah pertukaran hawa panas adekuat? <br>
+                                            a. Tidak ada, lakukan bantuan nafas <br>
+                                            b. Frekuansi <br>
+                                            c. Kualitas <br>
+                                            d. Teratur <br>
+                                            e. Ujung kuku biru atau tidak
+                                        </li>
+                                        <li>Perdarahan <br>
+                                            - Diluar : <br>
+                                            Hentikan segera : <br>
+                                            <ul>
+                                                <li>Dengan bebat tekan pada luka</li>
+                                                <li>Bagian luka yang ditinggikan</li>
+                                                <li>Kompress es</li>
+                                                <li>Tourniquet (hanya pada luka khusus)</li>
+                                            </ul>
+                                            <br>
+                                            - Didalam :
+                                            <ul>
+                                                <li>Kirim segera</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Tulang Belakang <br>
+                                            Apakah sadar? <br>
+                                            Adakah trauma kepala? <br>
+                                            Stabilisasi leher dan tulang belakang <br>
+                                            Sebelum dikirim <br>
+                                        </li>
+                                        <li>
+                                            Shock <br>
+                                            Tanda-tanda shock <br>
+                                            Stabilitas segera kirim <br>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </div>
+                    
+                            <button class='accordion'>Pemeriksaan Sekunder</button>
+                            <div class='panel'>
+                                <p>
+                                    Pemeriksaan sekunder adalah mencari perubahan-perubahan yang dapat berkembang menjadi lebih
+                                    gawat dan dapat mengancamjiwa apabila tidak segera diatasi.
+
+                                    <b align='center'>Cara Pelaksanaannya :</b>
+                                    <ul>
+                                        <li>
+                                            Periksa kondisi menyeluruh
+                                            1. Posisi saat ditemukan
+                                            2. Tingkat kesadaran
+                                            3. Sikap umum dan keluhan
+                                            4. Ruda paksa, kelainan
+                                            5. Keadaan sulit
+                                        </li>
+                                        <li>
+                                            Periksa kepala dan leher <br>
+                                            Rambut, kulit kepala, telinga, mata, hidung, mulut, ada kejang otot leher/tidak
+                                        </li>
+                                        <li>
+                                            Periksa dada dan perut <br>
+                                            Ada luka di dada, kelainan bentuk, perut tegang
+                                        </li>
+                                        <li>
+                                            Periksa anggota gerak atas dan bawah <br>
+                                            Luka, bengkak, nyeri untuk gerak
+                                        </li>
+                                    </ul>
+                                </p>
+                            </div>
+                    
+                            <script>
+                                var acc = document.getElementsByClassName('accordion');
+                                var i;
+                    
+                                for (i = 0; i < acc.length; i++) {
+                                    acc[i].addEventListener('click', function () {
+                                        this
+                                            .classList
+                                            .toggle('active');
+                                        var panel = this.nextElementSibling;
+                                        if (panel.style.display === 'block') {
+                                            panel.style.display = 'none';
+                                        } else {
+                                            panel.style.display = 'block';
+                                        }
+                                    });
+                                }
+                            </script>"
                         );
         $tempData       = array();
 
