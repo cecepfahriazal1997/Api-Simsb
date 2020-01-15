@@ -13,8 +13,6 @@
     </head>
 
     <body>
-        <h4 align="center">Klasifikasi Disaster / Bencana</h4>
-        <br>
         <div class="row">
             <div class="col-lg-4 col-md-4">
                 <a href="<?= base_url().'welcome/naturalDisaster'?>">
