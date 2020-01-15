@@ -22,4 +22,32 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+
+	public function menuDisaster() {
+		$this->load->view('menu_disaster');
+	}
+
+	public function naturalDisaster() {
+		$this->load->view('natural_disaster');
+	}
+
+	public function technologyDisaster() {
+		$this->load->view('technology_disaster');
+	}
+
+	public function complexDisaster() {
+		$this->load->view('complex_disaster');
+	}
+
+	public function pasienTerapi() {
+		$this->load->view('pasien_terapi');
+	}
+
+	public function pasienPrioritas() {
+		$this->load->view('pasien_prioritas');
+	}
+
+	public function pasienTriase() {
+		$this->load->view('pasien_triase');
+	}
 }
