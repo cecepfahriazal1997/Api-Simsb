@@ -115,7 +115,7 @@ class Dashboard extends REST_Controller
         $image          = array(
                             "<img src='http://atp-sb-medis.com/image/informasi_1.jpg'/>",
                             "<img src='http://atp-sb-medis.com/image/informasi_2.jpg'/>",
-                            "<iframe src='".base_url().'welcome/menuDisaster'."' style='background:none transparent; width: 100%; height: 100%;' allowtransparency='true'/>",
+                            "<iframe src='".base_url().'welcome/menuDisaster'."' style='position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;' allowtransparency='true'/>",
                             "<iframe src='".base_url().'welcome/pasienTriase'."'/>",
                             "<iframe src='".base_url().'welcome/pasienPrioritas'."'/>",
                             "<img src='http://atp-sb-medis.com/image/informasi_5_1.jpg'/><br><br><img src='http://atp-sb-medis.com/image/informasi_5_2.jpg'/>",
