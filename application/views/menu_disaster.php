@@ -13,42 +13,40 @@
     </head>
 
     <body>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-4">
-                        <a href="<?= base_url().'welcome/naturalDisaster'?>">
-                            <div class="card">
-                                <img
-                                    class="card-img-top"
-                                    src="http://atp-sb-medis.com/image/menu-1.png"
-                                    style="height: 400px;"
-                                    alt="Card image cap">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="<?= base_url().'welcome/technologyDisaster'?>">
-                            <div class="card">
-                                <img
-                                    class="card-img-top"
-                                    src="http://atp-sb-medis.com/image/menu-2.png"
-                                    style="height: 400px;"
-                                    alt="Card image cap">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="<?= base_url().'welcome/complexDisaster'?>">
-                            <div class="card">
-                                <img
-                                    class="card-img-top"
-                                    src="http://atp-sb-medis.com/image/menu-3.png"
-                                    style="height: 400px;"
-                                    alt="Card image cap">
-                            </div>
-                        </a>
-                    </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-4 col-md-4">
+                    <a href="<?= base_url().'welcome/naturalDisaster'?>">
+                        <div class="card">
+                            <img
+                                class="card-img-top"
+                                src="http://atp-sb-medis.com/image/menu-1.png"
+                                style="height: 400px;"
+                                alt="Card image cap">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <a href="<?= base_url().'welcome/technologyDisaster'?>">
+                        <div class="card">
+                            <img
+                                class="card-img-top"
+                                src="http://atp-sb-medis.com/image/menu-2.png"
+                                style="height: 400px;"
+                                alt="Card image cap">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <a href="<?= base_url().'welcome/complexDisaster'?>">
+                        <div class="card">
+                            <img
+                                class="card-img-top"
+                                src="http://atp-sb-medis.com/image/menu-3.png"
+                                style="height: 400px;"
+                                alt="Card image cap">
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

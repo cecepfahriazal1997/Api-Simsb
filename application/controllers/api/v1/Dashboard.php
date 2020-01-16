@@ -126,7 +126,7 @@ class Dashboard extends REST_Controller
                             'text',
                             'url',
                             'url',
-                            'ur;',
+                            'url;',
                             'text',
                             'url'
                         );
