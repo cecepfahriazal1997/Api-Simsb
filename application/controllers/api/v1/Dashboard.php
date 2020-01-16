@@ -115,7 +115,7 @@ class Dashboard extends REST_Controller
         $image          = array(
                             "<img src='http://atp-sb-medis.com/image/informasi_1.jpg'/>",
                             "<img src='http://atp-sb-medis.com/image/informasi_2.jpg'/>",
-                            base_url().'welcome/menuDisaster',
+                            base_url().'welcome/naturalDisaster',
                             base_url().'welcome/pasienTriase',
                             base_url().'welcome/pasienPrioritas',
                             "<img src='http://atp-sb-medis.com/image/informasi_5_1.jpg'/><br><br><img src='http://atp-sb-medis.com/image/informasi_5_2.jpg'/>",
