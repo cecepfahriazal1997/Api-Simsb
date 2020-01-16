@@ -7,22 +7,20 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 </head>
 
-<body style="background-color: #F3F3F3;">
+<body>
     <div class="container-fluid pt-3 pb-3">
-        <h4 align="center" class="m-3">Natural Disaster (Bencana Alam)</h4>
-        <br>
         <div class="row">
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-6 col-md-12 mt-3">
                 <div class="card">
-                    <img class="card-img-top" src="http://atp-sb-medis.com/image/informasi_bencana/banjir.jpg" style="height: 300px;">
+                    <img class="card-img-top" src="http://atp-sb-medis.com/image/informasi_bencana/banjir.jpg">
                     <div class="card-body text-center">
                         <h4>Banjir</h4>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-6 col-md-12 mt-3">
                 <div class="card">
-                    <img class="card-img-top" src="http://atp-sb-medis.com/image/informasi_bencana/tanah_longsor.jpg" style="height: 300px;">
+                    <img class="card-img-top" src="http://atp-sb-medis.com/image/informasi_bencana/tanah_longsor.jpg">
                     <div class="card-body text-center">
                         <h4>Tanah Longsor</h4>
                     </div>
@@ -30,35 +28,35 @@
             </div>
         </div>
         <div class="row mt-3">
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-6 col-md-12 mt-3">
                 <div class="card">
-                    <img class="card-img-top" src="http://atp-sb-medis.com/image/informasi_bencana/kelaparan.jpg" style="height: 300px;">
+                    <img class="card-img-top" src="http://atp-sb-medis.com/image/informasi_bencana/kelaparan.jpg">
                     <div class="card-body text-center">
                         <h4>Kelaparan</h4>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-6 col-md-12 mt-3">
                 <div class="card">
-                    <img class="card-img-top" src="http://atp-sb-medis.com/image/informasi_bencana/kekeringan.jpg" style="height: 300px;">
+                    <img class="card-img-top" src="http://atp-sb-medis.com/image/informasi_bencana/kekeringan.jpg">
                     <div class="card-body text-center">
                         <h4>Kekeringan</h4>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row mt-3">
-            <div class="col-lg-6 col-md-6">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mt-3">
                 <div class="card">
-                    <img class="card-img-top" src="http://atp-sb-medis.com/image/informasi_bencana/angin_topan.jpg" style="height: 300px;">
+                    <img class="card-img-top" src="http://atp-sb-medis.com/image/informasi_bencana/angin_topan.jpg">
                     <div class="card-body text-center">
                         <h4>Angin Topan</h4>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-6 col-md-12 mt-3">
                 <div class="card">
-                    <img class="card-img-top" src="http://atp-sb-medis.com/image/informasi_bencana/badai.jpg" style="height: 300px;">
+                    <img class="card-img-top" src="http://atp-sb-medis.com/image/informasi_bencana/badai.jpg">
                     <div class="card-body text-center">
                         <h4>Badai</h4>
                     </div>
@@ -66,17 +64,17 @@
             </div>
         </div>
         <div class="row mt-3">
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-6 col-md-12 mt-3">
                 <div class="card">
-                    <img class="card-img-top" src="http://atp-sb-medis.com/image/informasi_bencana/gempa.jpg" style="height: 300px;">
+                    <img class="card-img-top" src="http://atp-sb-medis.com/image/informasi_bencana/gempa.jpg">
                     <div class="card-body text-center">
                         <h4>Gempa</h4>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-6 col-md-12 mt-3 mb-3">
                 <div class="card">
-                    <img class="card-img-top" src="http://atp-sb-medis.com/image/informasi_bencana/setelah_tsunami.jpg" style="height: 300px;">
+                    <img class="card-img-top" src="http://atp-sb-medis.com/image/informasi_bencana/setelah_tsunami.jpg">
                     <div class="card-body text-center">
                         <h4>Tsunami</h4>
                     </div>
