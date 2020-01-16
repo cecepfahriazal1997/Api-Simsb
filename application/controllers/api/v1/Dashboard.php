@@ -121,12 +121,22 @@ class Dashboard extends REST_Controller
                             "<img src='http://atp-sb-medis.com/image/informasi_5_1.jpg'/><br><br><img src='http://atp-sb-medis.com/image/informasi_5_2.jpg'/>",
                             base_url().'welcome/pasienTerapi'
                         );
+        $type           = array(
+                            'text',
+                            'text',
+                            'url',
+                            'url',
+                            'ur;',
+                            'text',
+                            'url'
+                        );
         $tempData       = array();
 
         for ($i = 0; $i < count($title); $i++) {
             $param          = array();
             $param['title'] = $title[$i];
             $param['image'] = $image[$i];
+            $param['type']  = $type[$i];
             $tempData[]     = $param;
         }
         $response['status']     = '1';
