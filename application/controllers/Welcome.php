@@ -23,10 +23,6 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 
-	public function menuDisaster() {
-		$this->load->view('menu_disaster');
-	}
-
 	public function naturalDisaster() {
 		$this->load->view('natural_disaster');
 	}
