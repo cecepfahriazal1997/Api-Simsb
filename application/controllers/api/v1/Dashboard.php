@@ -113,7 +113,7 @@ class Dashboard extends REST_Controller
                             'Pasien Terapi',
                         );
         $image          = array(
-                            "<body style='margin: 0px; background: rgb(14, 14, 14);'><img style='-webkit-user-select: none;margin: auto;' src='http://atp-sb-medis.com/image/informasi_1.jpg'></body>",
+                            "<img style='display: inline;height: auto;max-width: 100%;' src='http://atp-sb-medis.com/image/informasi_1.jpg'>",
                             "<img src='http://atp-sb-medis.com/image/informasi_2.jpg'/>",
                             '',
                             base_url().'welcome/pasienTriase',
