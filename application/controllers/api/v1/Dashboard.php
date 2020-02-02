@@ -114,11 +114,11 @@ class Dashboard extends REST_Controller
                         );
         $image          = array(
                             "<img style='display: inline;height: auto;max-width: 100%;' src='http://atp-sb-medis.com/image/informasi_1.jpg'>",
-                            "<img src='http://atp-sb-medis.com/image/informasi_2.jpg'/>",
+                            "<img style='display: inline;height: auto;max-width: 100%;' src='http://atp-sb-medis.com/image/informasi_2.jpg'/>",
                             '',
                             base_url().'welcome/pasienTriase',
                             base_url().'welcome/pasienPrioritas',
-                            "<img src='http://atp-sb-medis.com/image/informasi_5_1.jpg'/><br><br><img src='http://atp-sb-medis.com/image/informasi_5_2.jpg'/>",
+                            "<img style='display: inline;height: auto;max-width: 100%;' src='http://atp-sb-medis.com/image/informasi_5_1.jpg'/><br><br><img style='display: inline;height: auto;max-width: 100%;' src='http://atp-sb-medis.com/image/informasi_5_2.jpg'/>",
                             base_url().'welcome/pasienTerapi'
                         );
         $type           = array(
