@@ -120,7 +120,7 @@
                                 <br>
                             </li>
                         </ul>
-                        Sumber : <a href="https://www.slideshare.net/puskesmasmojoagung/triage-presentation-735669">https://www.slideshare.net/puskesmasmojoagung/triage-presentation-735669</a>
+                        Sumber : <a href="https://www.slideshare.net/puskesmasmojoagung/triage-presentation-735669" style="text-decoration: underline">https://www.slideshare.net/puskesmasmojoagung/triage-presentation-735669</a>
                     </div>
                 </div>
                 <div class='card-header'>
@@ -164,6 +164,7 @@
                                 Luka, bengkak, nyeri untuk gerak
                             </li>
                         </ul>
+                        Sumber : <a href="https://www.slideshare.net/puskesmasmojoagung/triage-presentation-735669" style="text-decoration: underline">https://www.slideshare.net/puskesmasmojoagung/triage-presentation-735669</a>
                     </div>
                 </div>
             </div>

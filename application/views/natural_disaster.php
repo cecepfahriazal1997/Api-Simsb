@@ -81,6 +81,7 @@
                 </div>
             </div>
         </div>
+        Sumber : <a href="https://www.slideshare.net/antogesek/bencana-dan-triage" style="text-decoration: underline">https://www.slideshare.net/antogesek/bencana-dan-triage</a>, 2019-12-14, 21.45
     </div>
 </body>
 </html>

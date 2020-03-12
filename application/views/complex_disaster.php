@@ -28,5 +28,6 @@
             <li>Kelangkaan SDM kesehatan</li>
             <li>Timbulnya post Traumatic Stress (PTSD)</li>
         </ul>
+        Sumber : <a href="https://www.slideshare.net/antogesek/bencana-dan-triage" style="text-decoration: underline">https://www.slideshare.net/antogesek/bencana-dan-triage</a>, 2019-12-14, 21.45
     </body>
 </html>
