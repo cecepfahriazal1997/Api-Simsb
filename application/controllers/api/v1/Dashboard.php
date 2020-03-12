@@ -113,12 +113,12 @@ class Dashboard extends REST_Controller
                             'Pasien Terapi',
                         );
         $image          = array(
-                            "<img style='display: inline;height: auto;max-width: 100%;' src='http://atp-sb-medis.com/image/informasi_1.jpg'/><p>Sumber : https://www.slideshare.net/antogesek/bencana-dan-triage, 2019-12-14, 21.45</p>",
-                            "<img style='display: inline;height: auto;max-width: 100%;' src='http://atp-sb-medis.com/image/informasi_2.jpg'/><p>Sumber : https://www.slideshare.net/antogesek/bencana-dan-triage, 2019-12-14, 21.45</p>",
+                            "<img style='display: inline;height: auto;max-width: 100%;' src='http://atp-sb-medis.com/image/informasi_1.jpg'/><p>Sumber : <a href='https://www.slideshare.net/antogesek/bencana-dan-triage' style='text-decoration: underline'>https://www.slideshare.net/antogesek/bencana-dan-triage</a>, 2019-12-14, 21.45</p>",
+                            "<img style='display: inline;height: auto;max-width: 100%;' src='http://atp-sb-medis.com/image/informasi_2.jpg'/><p>Sumber : <a href='https://www.slideshare.net/antogesek/bencana-dan-triage' style='text-decoration: underline'>https://www.slideshare.net/antogesek/bencana-dan-triage</a>, 2019-12-14, 21.45</p>",
                             '',
                             base_url().'welcome/pasienTriase',
                             base_url().'welcome/pasienPrioritas',
-                            "<img style='display: inline;height: auto;max-width: 100%;' src='http://atp-sb-medis.com/image/informasi_5_1.jpg'/><br><br><img style='display: inline;height: auto;max-width: 100%;' src='http://atp-sb-medis.com/image/informasi_5_2.jpg'/><p>Sumber : https://www.slideshare.net/antogesek/bencana-dan-triage, 2019-12-14, 21.45</p>",
+                            "<img style='display: inline;height: auto;max-width: 100%;' src='http://atp-sb-medis.com/image/informasi_5_1.jpg'/><br><br><img style='display: inline;height: auto;max-width: 100%;' src='http://atp-sb-medis.com/image/informasi_5_2.jpg'/><p>Sumber : <a href='https://www.slideshare.net/antogesek/bencana-dan-triage' style='text-decoration: underline'>https://www.slideshare.net/antogesek/bencana-dan-triage</a>, 2019-12-14, 21.45</p>",
                             base_url().'welcome/pasienTerapi'
                         );
         $type           = array(
