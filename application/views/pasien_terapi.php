@@ -120,6 +120,7 @@
                                 <br>
                             </li>
                         </ul>
+                        Sumber : <a href="https://www.slideshare.net/puskesmasmojoagung/triage-presentation-735669">https://www.slideshare.net/puskesmasmojoagung/triage-presentation-735669</a>
                     </div>
                 </div>
                 <div class='card-header'>
