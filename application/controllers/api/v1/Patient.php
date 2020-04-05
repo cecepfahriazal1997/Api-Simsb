@@ -155,20 +155,26 @@ class Patient extends REST_Controller
         
         $cekData            = $this->model->getPatientById($patientId);
         $checkProgress      = $this->model->checkProgress($patientId);
+        $checkHistory       = $this->model->getHistoryById($patientId);
         
         if (!empty($cekData->PatientId)) {
-            if ($checkProgress == 0) {
-                $deleteData     = $this->model->deleteData($patientId);
-                if ($deleteData) {
-                    $response['status']     = '1';
-                    $response['message']    = 'Pasien berhasil di hapus !';
+            if (empty($checkHistory->id)) {
+                if ($checkProgress == 0) {
+                    $deleteData     = $this->model->deleteData($patientId);
+                    if ($deleteData) {
+                        $response['status']     = '1';
+                        $response['message']    = 'Pasien berhasil di hapus !';
+                    } else {
+                        $response['status']     = '0';
+                        $response['message']    = 'Pasien gagal di hapus !';
+                    }
                 } else {
                     $response['status']     = '0';
-                    $response['message']    = 'Pasien gagal di hapus !';
+                    $response['message']    = 'Pasien tidak dapat dihapus, karena telah memiliki data perkembangan !';
                 }
             } else {
                 $response['status']     = '0';
-                $response['message']    = 'Pasien tidak dapat dihapus, karena telah memiliki data perkembangan !';
+                $response['message']    = 'Pasien tidak dapat dihapus, karena telah memiliki data history !';
             }
         } else {
             $response['status']     = '0';
