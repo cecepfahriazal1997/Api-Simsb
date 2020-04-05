@@ -154,27 +154,33 @@ class Patient extends REST_Controller
         $response           = array();
         
         $cekData            = $this->model->getPatientById($patientId);
-        $checkProgress      = $this->model->checkProgress($patientId);
-        $checkHistory       = $this->model->getHistoryById($patientId);
+        $checkHistory       = $this->model->checkRelation('history', $patientId);
+        $checkProgress      = $this->model->checkRelation('progress', $patientId);
+        $checkMonitoring    = $this->model->checkRelation('monitoring', $patientId);
+        $checkCollab        = $this->model->checkRelation('collaboration', $patientId);
         
         if (!empty($cekData->PatientId)) {
-            if (count($checkHistory) == 0) {
-                if ($checkProgress == 0) {
-                    $deleteData     = $this->model->deleteData($patientId);
-                    if ($deleteData) {
-                        $response['status']     = '1';
-                        $response['message']    = 'Pasien berhasil di hapus !';
-                    } else {
-                        $response['status']     = '0';
-                        $response['message']    = 'Pasien gagal di hapus !';
-                    }
-                } else {
-                    $response['status']     = '0';
-                    $response['message']    = 'Pasien tidak dapat dihapus, karena telah memiliki data perkembangan ! ';
-                }
-            } else {
+            if ($checkHistory > 0) {
                 $response['status']     = '0';
                 $response['message']    = 'Pasien tidak dapat dihapus, karena telah memiliki data history !';
+            } elseif ($checkProgress > 0) {
+                $response['status']     = '0';
+                $response['message']    = 'Pasien tidak dapat dihapus, karena telah memiliki data perkembangan ! ';
+            } elseif ($checkMonitoring > 0) {
+                $response['status']     = '0';
+                $response['message']    = 'Pasien tidak dapat dihapus, karena telah memiliki data monitoring ! ';
+            } elseif ($checkCollab > 0) {
+                $response['status']     = '0';
+                $response['message']    = 'Pasien tidak dapat dihapus, karena telah memiliki data kolaborasi ! ';
+            } else {
+                $deleteData     = $this->model->deleteData($patientId);
+                if ($deleteData) {
+                    $response['status']     = '1';
+                    $response['message']    = 'Pasien berhasil di hapus !';
+                } else {
+                    $response['status']     = '0';
+                    $response['message']    = 'Pasien gagal di hapus !';
+                }
             }
         } else {
             $response['status']     = '0';

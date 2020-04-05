@@ -24,9 +24,9 @@ class PatientModel extends CI_Model
         return $this->db->get('history')->row();
     }
     
-    public function checkProgress($id) {
+    public function checkRelation($table, $id) {
         $this->db->where('PatientId', $id);
-        return $this->db->get('progress')->num_rows();
+        return $this->db->get($table)->num_rows();
     }
 
     public function insertData($data) {
