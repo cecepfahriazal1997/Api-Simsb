@@ -154,7 +154,7 @@ class Patient extends REST_Controller
         $response           = array();
         
         $cekData            = $this->model->getPatientById($patientId);
-        $checkProgress      = $this->model->getHistoryById($patientId);
+        $checkProgress      = $this->model->checkProgress($patientId);
         
         if (!empty($cekData->PatientId)) {
             if ($checkProgress == 0) {
