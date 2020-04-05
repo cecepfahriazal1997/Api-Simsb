@@ -56,6 +56,7 @@ class Patient extends REST_Controller
         $supportName        = $this->post('supportName');
         $remark             = $this->post('remark');
         $phoneDoctor        = $this->post('phoneDoctor');
+        $emailDoctor        = $this->post('emailDoctor');
         $userInput          = $this->post('userInput');
         $response           = array();
 
@@ -79,6 +80,7 @@ class Patient extends REST_Controller
             $insert['UserID']       = $userInput;
             $insert['var1']         = $number;
             $insert['DoctorWA']     = $phoneDoctor;
+            $insert['DoctorEmail']  = $emailDoctor;
 
             $inserData              = $this->model->insertData($insert);
             if ($inserData) {
@@ -110,6 +112,7 @@ class Patient extends REST_Controller
         $supportName        = $this->post('supportName');
         $remark             = $this->post('remark');
         $phoneDoctor        = $this->post('phoneDoctor');
+        $emailDoctor        = $this->post('emailDoctor');
         $response           = array();
 
         $cekData            = $this->model->getPatientById($patientId);
@@ -128,6 +131,7 @@ class Patient extends REST_Controller
             $update['SupportNm']    = $supportName;
             $update['Remark']       = $remark;
             $update['DoctorWA']     = $phoneDoctor;
+            $insert['DoctorEmail']  = $emailDoctor;
 
             $inserData              = $this->model->updateData($patientId, $update);
             if ($inserData) {
@@ -150,14 +154,21 @@ class Patient extends REST_Controller
         $response           = array();
         
         $cekData            = $this->model->getPatientById($patientId);
+        $checkProgress      = $this->model->getHistoryById($patientId);
+        
         if (!empty($cekData->PatientId)) {
-            $deleteData     = $this->model->deleteData($patientId);
-            if ($deleteData) {
-                $response['status']     = '1';
-                $response['message']    = 'Pasien berhasil di hapus !';
+            if ($checkProgress == 0) {
+                $deleteData     = $this->model->deleteData($patientId);
+                if ($deleteData) {
+                    $response['status']     = '1';
+                    $response['message']    = 'Pasien berhasil di hapus !';
+                } else {
+                    $response['status']     = '0';
+                    $response['message']    = 'Pasien gagal di hapus !';
+                }
             } else {
                 $response['status']     = '0';
-                $response['message']    = 'Pasien gagal di hapus !';
+                $response['message']    = 'Pasien tidak dapat dihapus, karena telah memiliki data perkembangan !';
             }
         } else {
             $response['status']     = '0';

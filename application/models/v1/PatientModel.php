@@ -23,6 +23,11 @@ class PatientModel extends CI_Model
         $this->db->where('PatientId', $id);
         return $this->db->get('history')->row();
     }
+    
+    public function checkProgress() {
+        $this->db->where('PatientId', $id);
+        return $this->db->get('progress')->num_rows();
+    }
 
     public function insertData($data) {
         return $this->db->insert('geninfo', $data);
