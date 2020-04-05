@@ -131,7 +131,7 @@ class Patient extends REST_Controller
             $update['SupportNm']    = $supportName;
             $update['Remark']       = $remark;
             $update['DoctorWA']     = $phoneDoctor;
-            $insert['DoctorEmail']  = $emailDoctor;
+            $update['DoctorEmail']  = $emailDoctor;
 
             $inserData              = $this->model->updateData($patientId, $update);
             if ($inserData) {
