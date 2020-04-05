@@ -158,7 +158,7 @@ class Patient extends REST_Controller
         $checkHistory       = $this->model->getHistoryById($patientId);
         
         if (!empty($cekData->PatientId)) {
-            if (empty($checkHistory->id)) {
+            if (count($checkHistory) == 0) {
                 if ($checkProgress == 0) {
                     $deleteData     = $this->model->deleteData($patientId);
                     if ($deleteData) {
@@ -170,7 +170,7 @@ class Patient extends REST_Controller
                     }
                 } else {
                     $response['status']     = '0';
-                    $response['message']    = 'Pasien tidak dapat dihapus, karena telah memiliki data perkembangan !';
+                    $response['message']    = 'Pasien tidak dapat dihapus, karena telah memiliki data perkembangan ! ';
                 }
             } else {
                 $response['status']     = '0';
