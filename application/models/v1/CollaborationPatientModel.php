@@ -16,7 +16,7 @@ class CollaborationPatientModel extends CI_Model
                             geninfo.SupportNm,
                             geninfo.DoctorWA,
                             geninfo.Time,
-                            geninfo.DoctorWA', false);
+                            geninfo.DoctorEmail', false);
         $this->db->order_by('geninfo.PatientNm', 'ASC');
         return $this->db->get('geninfo')->result();
     }
