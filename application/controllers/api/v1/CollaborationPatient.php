@@ -27,7 +27,8 @@ class CollaborationPatient extends REST_Controller
         if (count($data) > 0) {
             $response['status']     = true;
             $response['message']    = '';
-            $response['data']       = $data;
+            $response['data']       = $this->general->replaceArrayNull($data);
+            $response['years']      = array_values(array_filter(array_unique(array_column($data, 'Year'))));
         } else {
             $response['status']     = false;
             $response['message']    = 'Data tidak ditemukan !';
@@ -63,7 +64,7 @@ class CollaborationPatient extends REST_Controller
             $response['data']       = $responseData;
         } else {
             $response['status']     = '0';
-            $response['message']    = 'Belum ada history progress pada pasien ini !';
+            $response['message']    = 'Belum ada data kolaborasi pada pasien ini !';
         }
 
         $this->response($response);

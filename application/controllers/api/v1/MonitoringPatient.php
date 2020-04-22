@@ -23,21 +23,24 @@ class MonitoringPatient extends REST_Controller
 
     public function getMonitoring_get() {
         $response               = array();
+        $listYear               = array();
         $data                   = $this->model->listMonitoring(null);
         if (count($data) > 0) {
             $responseData           = array();
             $checkId                = array();
             foreach ($data as $row) {
                 $detail             = array();
+                $listYear[]         = $row->Year;
                 if (!in_array($row->PatientId, $checkId)) {
-                    $responseData[] = $row;
+                    $responseData[] = (array) $row;
                     $checkId[]      = $row->PatientId;
                 }
             }
             
             $response['status']     = '1';
             $response['message']    = 'Data berhasil ditemukan !';
-            $response['data']       = $responseData;
+            $response['data']       = $this->general->replaceArrayNull($responseData);
+            $response['years']      = array_values(array_filter(array_unique($listYear)));
         } else {
             $response['status']     = '0';
             $response['message']    = 'Belum ada data monitoring pada pasien ini !';

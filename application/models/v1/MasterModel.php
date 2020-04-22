@@ -9,7 +9,7 @@ class MasterModel extends CI_Model
     public function masterStatic($type) {
         $data       = array();
         if ($type == 'gejalaSpesifik') {
-            $data           = array('Luka', 'Oedema', 'Woud', 'Disorientasi');
+            $data           = array('Luka', 'Oedema', 'Woud', 'Disorientasi', 'Dan Lain-lain');
         } elseif ($type == 'hubunganKeluarga') {
             $data           = array('Grand Daug', 'Father', 'Mother', 'Son', 'Daughter', 'Grad Father', 
                                     'Grand Mother', 'Son', 'Grand Daughter');
@@ -17,16 +17,16 @@ class MasterModel extends CI_Model
             $data           = array('Frackture Tibia 1/3 Upper', 'Frackture Tibia 1/3 Middle', 'Frackture Tibia 1/3 Upper',
                                     'Frackture Tibia 1/3 Lower', 'Frackture Tibia 1/3 Femur', 'Frackture Collum Femur', 
                                     'Frackture Femur 1/3 Lower', 'Frackture Hummery 1/3 Middle', 'Frackture Lumbal L2-3',
-                                    'Frackture Patela', 'Dislocation Of Enkle', 'Non');
+                                    'Frackture Patela', 'Dislocation Of Enkle', 'Non', 'Dan Lain-lain');
         } else if ($type == 'diagnosis') {
             $data           = array('Stress', 'Costusio Cerebry', 'Dislocation  Of Enkle', 'Frackture Femur 1/3 Lower', 
                                     'Frackture Humery 1/3 Midlle', 'Frackture Patela', 'Frackture Tibia 1/3 Lower', 
                                     'Frackture Tibia 1/3 Upper', 'Open Frackture Collom Femur', 'Open Frackture Tibia 1/3 Middle',
-                                    'Paraplegia', 'Trauma Thorax');
+                                    'Paraplegia', 'Trauma Thorax', 'Dan Lain-lain');
         } else if ($type == 'terapi') {
-            $data           = array('Perban', 'Obat', 'Operasi', 'Opertio', 'Fisioterapi', 'Penggantian', 'Invactive Minimum', 'Pemulihan Fisik');
+            $data           = array('Perban', 'Obat', 'Operasi', 'Opertio', 'Fisioterapi', 'Penggantian', 'Invactive Minimum', 'Pemulihan Fisik', 'Dan Lain-lain');
         } else if ($type == 'rehabilitas') {
-            $data           = array('Fisioterapi', 'Terapi Occupational', 'Terapi Sosial');
+            $data           = array('Fisioterapi', 'Terapi Occupational', 'Terapi Sosial', 'Dan Lain-lain');
         } else if ($type == 'komplikasi') {
             $data           = array('Infeksi', 'Patah Tulang', 'Cacat', 'Stress Psikologi Pasca Bencana');
         } else if ($type == 'detailKomplikasi') {

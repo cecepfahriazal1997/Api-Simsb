@@ -26,14 +26,18 @@ class Patient extends REST_Controller
         $listData   = $this->model->getPatient();
         $tempData   = array();
         $response   = array();
+        $listYear   = array();
 
         if (count($listData) > 0) {
             foreach ($listData as $row) {
-                $tempData[] = $row;
+                $tempData[] = (array) $row;
+                $listYear[] = $row->Year;
             }
+            
             $response['status']     = '1';
             $response['message']    = '';
-            $response['data']       = $tempData;
+            $response['data']       = $this->general->replaceArrayNull($tempData);
+            $response['years']      = array_values(array_filter(array_unique($listYear)));
         } else {
             $response['status']     = '0';
             $response['message']    = 'Data tidak ditemukan !';

@@ -63,10 +63,10 @@ class Dashboard extends REST_Controller
     }
 
     public function listUserGuide_get() {
-        $title          = array('Petunjuk Pemakaian / User Guide', 'Diagram Alir / Flowchart');
+        $title          = array('Petunjuk Pemakaian / User Guide', 'Diagram Alir / Flowchart', 'Petunjuk Penggunaan Versi Mobile');
         $description    = array('Petunjuk pemakaian dalam Sistem Informasi Medis Bencana, mencakup dari memasukkan data, mengedit data, serta menghapus data.',
-                            'Bagan atau diagram alir dari Sistem Informasi Medis Bencana');
-        $file           = array('SIMPB_manual.doc', 'FlowChartSIMPB.doc');
+                            'Bagan atau diagram alir dari Sistem Informasi Medis Bencana', 'Petunjuk penggunaan dalam Sistem Informasi Medis Bencana versi mobile mencakup dan memasukkan data, mengedit data, serta menghapus data.');
+        $file           = array('SIMPB_manual.doc', 'FlowChartSIMPB.doc', 'SIMPB_manual_mobile.docx');
         $pathFile       = 'http://atp-sb-medis.com/download/';
         $tempData       = array();
 

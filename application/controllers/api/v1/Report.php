@@ -31,6 +31,7 @@ class Report extends REST_Controller
             $tempData       = array();
             $listProgress   = array();
             $checkId        = array();
+            $listYear       = array();
             $complication   = $this->master->masterStatic('komplikasi');
 
             foreach ($listData as $row) {
@@ -46,6 +47,7 @@ class Report extends REST_Controller
                     $param['year']      = array();
                     $tempData[]         = $param;
                     $checkId[]          = $row->PatientId;
+                    $listYear[]         = $row->Year;
                 }
 
                 $detail                 = array();
@@ -67,7 +69,8 @@ class Report extends REST_Controller
 
             $response['status']     = '1';
             $response['message']    = 'Data telah ditemukan !';
-            $response['data']       = $responseData;
+            $response['data']       = $this->general->replaceArrayNull($responseData);
+            $response['years']      = array_values(array_filter(array_unique($listYear)));
         } else {
             $response['status']     = '0';
             $response['message']    = 'Data tidak ditemukan !';

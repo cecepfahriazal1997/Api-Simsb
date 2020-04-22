@@ -16,9 +16,10 @@ class CollaborationPatientModel extends CI_Model
                             geninfo.SupportNm,
                             geninfo.DoctorWA,
                             geninfo.Time,
+                            YEAR(geninfo.Time) as Year,
                             geninfo.DoctorEmail', false);
         $this->db->order_by('geninfo.PatientNm', 'ASC');
-        return $this->db->get('geninfo')->result();
+        return $this->db->get('geninfo')->result_array();
     }
     
     public function listCollaboration($patientId) {

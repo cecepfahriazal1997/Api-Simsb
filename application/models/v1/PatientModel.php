@@ -7,7 +7,7 @@ class PatientModel extends CI_Model
     }
 
     public function getPatient() {
-        $this->db->select('geninfo.*, countries.name as nameCountries', false);
+        $this->db->select('geninfo.*, countries.name as nameCountries, YEAR(geninfo.Time) as Year', false);
         $this->db->order_by('Time', 'DESC');
         $this->db->join('countries', 'countries.iso1_code = geninfo.Location', 'left');
         $list   = $this->db->get('geninfo')->result();
