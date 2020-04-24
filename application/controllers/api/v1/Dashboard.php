@@ -72,7 +72,7 @@ class Dashboard extends REST_Controller
                             'Berikut ini adalah video tatacara untuk melakukan login ke dalam Aplikasi.', 'Berikut ini adalah video tatacara melakukan perubahan password lama dengan yang baru.', 
                             'Berikut ini adalah video tatacara untuk menambahkan data pasien baru kedalam aplikasi.', 'Berikut ini adalah video tatacara untuk merubah data pasien yang telah ditambahkan kedalam aplikasi.', 
                             'Berikut ini adalah video tatacara untuk menambahkan data history pasien.', 'Berikut ini adalah video tatacara untuk menambahkan data perkembangan pasien.', 
-                            'Berikut ini adalah video tatacara untuk menambahkan data perkembangan pasien.', 'Berikut ini adalah video tatacara untuk menambahkan data monitoring kepada pasien.', 
+                            'Berikut ini adalah video tatacara untuk menambahkan data monitoring pasien.', 'Berikut ini adalah video tatacara untuk menambahkan data kolaborasi kepada pasien.', 
                             'Berikut ini adalah video tatacara untuk melihat data-data laporan pasien (perkembangan pasien secara berkala)', 'Berikut ini adalah video tatacara untuk membuat asesmen kebutuhan.', 
                             'Berikut ini adalah video tatacara untuk melihat daftar panduan saat bencana.');
         $file           = array('SIMPB_manual.doc', 'FlowChartSIMPB.doc', 'SIMPB_manual_mobile.docx',
