@@ -64,12 +64,17 @@ class Dashboard extends REST_Controller
 
     public function listUserGuide_get() {
         $title          = array('Petunjuk Pemakaian / User Guide', 'Diagram Alir / Flowchart', 'Petunjuk Penggunaan Versi Mobile', '1. Cara Login', 
-                                '2. Cara Merubah Password', '3. Cara Menambahkan Pasien Baru', '4. Cara mMerubah Data Pasien', '5. Cara Menambahkan History',
+                                '2. Cara Merubah Password', '3. Cara Menambahkan Pasien Baru', '4. Cara Merubah Data Pasien', '5. Cara Menambahkan History',
                                 '6. Cara Menambah Perkembangan Pasien', '7. Cara Memonitoring Pasien', '8. Cara Kolaborasi', '9. Cara Melihat Laporan', '10. Cara Membuat Asesmen Kebutuhan',
                                 '11. Cara Melihat Panduan Saat Bencana');
         $description    = array('Petunjuk pemakaian dalam Sistem Informasi Medis Bencana, mencakup dari memasukkan data, mengedit data, serta menghapus data.',
                             'Bagan atau diagram alir dari Sistem Informasi Medis Bencana', 'Petunjuk penggunaan dalam Sistem Informasi Medis Bencana versi mobile mencakup dan memasukkan data, mengedit data, serta menghapus data.',
-                            '', '', '', '', '', '', '', '', '', '', '');
+                            'Berikut ini adalah video tatacara untuk melakukan login ke dalam Aplikasi.', 'Berikut ini adalah video tatacara melakukan perubahan password lama dengan yang baru.', 
+                            'Berikut ini adalah video tatacara untuk menambahkan data pasien baru kedalam aplikasi.', 'Berikut ini adalah video tatacara untuk merubah data pasien yang telah ditambahkan kedalam aplikasi.', 
+                            'Berikut ini adalah video tatacara untuk menambahkan data history pasien.', 'Berikut ini adalah video tatacara untuk menambahkan data perkembangan pasien.', 
+                            'Berikut ini adalah video tatacara untuk menambahkan data perkembangan pasien.', 'Berikut ini adalah video tatacara untuk menambahkan data monitoring kepada pasien.', 
+                            'Berikut ini adalah video tatacara untuk melihat data-data laporan pasien (perkembangan pasien secara berkala)', 'Berikut ini adalah video tatacara untuk membuat asesmen kebutuhan.', 
+                            'Berikut ini adalah video tatacara untuk melihat daftar panduan saat bencana.');
         $file           = array('SIMPB_manual.doc', 'FlowChartSIMPB.doc', 'SIMPB_manual_mobile.docx',
                                 '01%20Cara%20Login.mp4', '02%20Cara%20Merubah%20Password.mp4', '03%20Cara%20Menambahkan%20Pasien%20Baru.mp4', '04%20Cara%20mMerubah%20Data%20Pasien.mp4',
                                 '05%20Cara%20Menambahkan%20History.mp4', '06%20Cara%20Menambah%20Perkembangan%20Pasien.mp4', '07%20Cara%20Memonitoring%20Pasien.mp4', '08%20Cara%20Kolaborasi.mp4', 
