@@ -63,10 +63,17 @@ class Dashboard extends REST_Controller
     }
 
     public function listUserGuide_get() {
-        $title          = array('Petunjuk Pemakaian / User Guide', 'Diagram Alir / Flowchart', 'Petunjuk Penggunaan Versi Mobile');
+        $title          = array('Petunjuk Pemakaian / User Guide', 'Diagram Alir / Flowchart', 'Petunjuk Penggunaan Versi Mobile', '1. Cara Login', 
+                                '2. Cara Merubah Password', '3. Cara Menambahkan Pasien Baru', '4. Cara mMerubah Data Pasien', '5. Cara Menambahkan History',
+                                '6. Cara Menambah Perkembangan Pasien', '7. Cara Memonitoring Pasien', '8. Cara Kolaborasi', '9. Cara Melihat Laporan', '10. Cara Membuat Asesmen Kebutuhan',
+                                '11. Cara Melihat Panduan Saat Bencana');
         $description    = array('Petunjuk pemakaian dalam Sistem Informasi Medis Bencana, mencakup dari memasukkan data, mengedit data, serta menghapus data.',
-                            'Bagan atau diagram alir dari Sistem Informasi Medis Bencana', 'Petunjuk penggunaan dalam Sistem Informasi Medis Bencana versi mobile mencakup dan memasukkan data, mengedit data, serta menghapus data.');
-        $file           = array('SIMPB_manual.doc', 'FlowChartSIMPB.doc', 'SIMPB_manual_mobile.docx');
+                            'Bagan atau diagram alir dari Sistem Informasi Medis Bencana', 'Petunjuk penggunaan dalam Sistem Informasi Medis Bencana versi mobile mencakup dan memasukkan data, mengedit data, serta menghapus data.',
+                            '01%20Cara%20Login.mp4', '02%20Cara%20Merubah%20Password.mp4', '03%20Cara%20Menambahkan%20Pasien%20Baru.mp4', '04%20Cara%20mMerubah%20Data%20Pasien.mp4',
+                            '05%20Cara%20Menambahkan%20History.mp4', '06%20Cara%20Menambah%20Perkembangan%20Pasien.mp4', '07%20Cara%20Memonitoring%20Pasien.mp4', '08%20Cara%20Kolaborasi.mp4', 
+                            '09%20Cara%20Melihat%20Laporan.mp4', '10%20Cara%20Membuat%20Asesmen%20Kebutuhan.mp4', '11%20Cara%20Melihat%20Panduan%20Saat%20Bencana.mp4');
+        $file           = array('SIMPB_manual.doc', 'FlowChartSIMPB.doc', 'SIMPB_manual_mobile.docx', '07%20Cara%20Memonitoring%20Pasien.mp4', '', '', '', '', '', '', '', '', '', '');
+        $type           = array('doc', 'doc', 'doc', 'video', 'video', 'video', 'video', 'video', 'video', 'video', 'video', 'video', 'video', 'video');
         $pathFile       = 'http://atp-sb-medis.com/download/';
         $tempData       = array();
 
@@ -74,7 +81,7 @@ class Dashboard extends REST_Controller
             $param                  = array();
             $param['title']         = $title[$i];
             $param['description']   = $description[$i];
-            $param['type']          = 'doc';
+            $param['type']          = $type[$i];
             $param['file']          = $pathFile.''.$file[$i];
             $tempData[]             = $param;
         }
