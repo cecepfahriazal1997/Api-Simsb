@@ -69,10 +69,11 @@ class Dashboard extends REST_Controller
                                 '11. Cara Melihat Panduan Saat Bencana');
         $description    = array('Petunjuk pemakaian dalam Sistem Informasi Medis Bencana, mencakup dari memasukkan data, mengedit data, serta menghapus data.',
                             'Bagan atau diagram alir dari Sistem Informasi Medis Bencana', 'Petunjuk penggunaan dalam Sistem Informasi Medis Bencana versi mobile mencakup dan memasukkan data, mengedit data, serta menghapus data.',
-                            '01%20Cara%20Login.mp4', '02%20Cara%20Merubah%20Password.mp4', '03%20Cara%20Menambahkan%20Pasien%20Baru.mp4', '04%20Cara%20mMerubah%20Data%20Pasien.mp4',
-                            '05%20Cara%20Menambahkan%20History.mp4', '06%20Cara%20Menambah%20Perkembangan%20Pasien.mp4', '07%20Cara%20Memonitoring%20Pasien.mp4', '08%20Cara%20Kolaborasi.mp4', 
-                            '09%20Cara%20Melihat%20Laporan.mp4', '10%20Cara%20Membuat%20Asesmen%20Kebutuhan.mp4', '11%20Cara%20Melihat%20Panduan%20Saat%20Bencana.mp4');
-        $file           = array('SIMPB_manual.doc', 'FlowChartSIMPB.doc', 'SIMPB_manual_mobile.docx', '07%20Cara%20Memonitoring%20Pasien.mp4', '', '', '', '', '', '', '', '', '', '');
+                            '', '', '', '', '', '', '', '', '', '', '');
+        $file           = array('SIMPB_manual.doc', 'FlowChartSIMPB.doc', 'SIMPB_manual_mobile.docx',
+                                '01%20Cara%20Login.mp4', '02%20Cara%20Merubah%20Password.mp4', '03%20Cara%20Menambahkan%20Pasien%20Baru.mp4', '04%20Cara%20mMerubah%20Data%20Pasien.mp4',
+                                '05%20Cara%20Menambahkan%20History.mp4', '06%20Cara%20Menambah%20Perkembangan%20Pasien.mp4', '07%20Cara%20Memonitoring%20Pasien.mp4', '08%20Cara%20Kolaborasi.mp4', 
+                                '09%20Cara%20Melihat%20Laporan.mp4', '10%20Cara%20Membuat%20Asesmen%20Kebutuhan.mp4', '11%20Cara%20Melihat%20Panduan%20Saat%20Bencana.mp4');
         $type           = array('doc', 'doc', 'doc', 'video', 'video', 'video', 'video', 'video', 'video', 'video', 'video', 'video', 'video', 'video');
         $pathFile       = 'http://atp-sb-medis.com/download/';
         $tempData       = array();
