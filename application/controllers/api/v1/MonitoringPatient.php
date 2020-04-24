@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-require(APPPATH.'/libraries/REST_Controller.php');
+use chriskacerguis\RestServer\RestController;
 
 /**
  * @author     Cecep Rokani | cecepfahriazal1997@gmail.com
@@ -14,7 +14,7 @@ require(APPPATH.'/libraries/REST_Controller.php');
  *  ==========================================================================
  */
 
-class MonitoringPatient extends REST_Controller
+class MonitoringPatient extends RestController
 {
     public function __construct() {
         parent::__construct();
@@ -46,7 +46,7 @@ class MonitoringPatient extends REST_Controller
             $response['message']    = 'Belum ada data monitoring pada pasien ini !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function getMonitoringDetail_get() {
@@ -77,7 +77,7 @@ class MonitoringPatient extends REST_Controller
             $response['message']    = 'Belum ada data monitoring pada pasien ini !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
     
     public function insertMonitoring_post() {
@@ -114,7 +114,7 @@ class MonitoringPatient extends REST_Controller
             $response['message']    = 'Pasien tidak terdaftar di sistem !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function updateMonitoring_post() {
@@ -152,7 +152,7 @@ class MonitoringPatient extends REST_Controller
             $response['message']    = 'Pasien tidak terdaftar di sistem !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function deleteMonitoring_post() {
@@ -173,7 +173,7 @@ class MonitoringPatient extends REST_Controller
             $response['status']     = '0';
             $response['message']    = 'Data gagal dihapus, data tidak terdaftar disistem !';
         }
-        $this->response($response);
+        $this->response($response, 200);
     }
 }
 ?>

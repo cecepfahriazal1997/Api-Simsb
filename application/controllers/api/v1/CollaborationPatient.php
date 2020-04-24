@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-require(APPPATH.'/libraries/REST_Controller.php');
+use chriskacerguis\RestServer\RestController;
 
 /**
  * @author     Cecep Rokani | cecepfahriazal1997@gmail.com
@@ -14,7 +14,7 @@ require(APPPATH.'/libraries/REST_Controller.php');
  *  ==========================================================================
  */
 
-class CollaborationPatient extends REST_Controller
+class CollaborationPatient extends RestController
 {
     public function __construct() {
         parent::__construct();
@@ -34,7 +34,7 @@ class CollaborationPatient extends REST_Controller
             $response['message']    = 'Data tidak ditemukan !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
     public function getCollaborationDetail_get() {
         $patientId          = $this->get('patientId');
@@ -67,7 +67,7 @@ class CollaborationPatient extends REST_Controller
             $response['message']    = 'Belum ada data kolaborasi pada pasien ini !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
     
     public function insertCollaboration_post() {
@@ -115,7 +115,7 @@ class CollaborationPatient extends REST_Controller
             $response['message']    = 'Pasien tidak terdaftar di sistem !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function updateCollaboration_post() {
@@ -165,7 +165,7 @@ class CollaborationPatient extends REST_Controller
             $response['message']    = 'Pasien tidak terdaftar di sistem !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function deleteCollaboration_post() {
@@ -189,7 +189,7 @@ class CollaborationPatient extends REST_Controller
             $response['message']    = 'Data gagal dihapus, data tidak terdaftar disistem !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 }
 ?>

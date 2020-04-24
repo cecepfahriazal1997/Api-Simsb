@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-require(APPPATH.'/libraries/REST_Controller.php');
+use chriskacerguis\RestServer\RestController;
 
 /**
  * @author     Cecep Rokani | cecepfahriazal1997@gmail.com
@@ -14,7 +14,7 @@ require(APPPATH.'/libraries/REST_Controller.php');
  *  ==========================================================================
  */
 
-class Dashboard extends REST_Controller
+class Dashboard extends RestController
 {
     public function __construct() {
         parent::__construct();
@@ -39,7 +39,7 @@ class Dashboard extends REST_Controller
             $response['data']       = $tempData;
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function getNews_get() {
@@ -59,7 +59,7 @@ class Dashboard extends REST_Controller
             $response['message']    = 'Data tidak ditemukan !';
             $response['data']       = $tempData;
         }
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function listUserGuide_get() {
@@ -95,7 +95,7 @@ class Dashboard extends REST_Controller
         $response['status']     = '1';
         $response['message']    = '';
         $response['data']       = $tempData;
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function contactUs_get() {
@@ -112,7 +112,7 @@ class Dashboard extends REST_Controller
         $response['status']     = '1';
         $response['message']    = '';
         $response['data']       = $tempData;
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function prepareDisaster_get() {
@@ -155,7 +155,7 @@ class Dashboard extends REST_Controller
         $response['status']     = '1';
         $response['message']    = '';
         $response['data']       = $tempData;
-        $this->response($response);
+        $this->response($response, 200);
     }
 }
 ?>

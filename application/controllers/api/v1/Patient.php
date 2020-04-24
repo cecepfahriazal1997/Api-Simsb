@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-require(APPPATH.'/libraries/REST_Controller.php');
+use chriskacerguis\RestServer\RestController;
 
 /**
  * @author     Cecep Rokani | cecepfahriazal1997@gmail.com
@@ -14,7 +14,7 @@ require(APPPATH.'/libraries/REST_Controller.php');
  *  ==========================================================================
  */
 
-class Patient extends REST_Controller
+class Patient extends RestController
 {
     public function __construct() {
         parent::__construct();
@@ -43,7 +43,7 @@ class Patient extends REST_Controller
             $response['message']    = 'Data tidak ditemukan !';
             $response['data']       = $tempData;
         }
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function insert_post() {
@@ -99,7 +99,7 @@ class Patient extends REST_Controller
             $response['message']    = 'Pasien telah terdaftar didalam sistem !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function update_post() {
@@ -150,7 +150,7 @@ class Patient extends REST_Controller
             $response['message']    = 'Pasien tidak terdaftar didalam sistem !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function delete_post() {
@@ -191,7 +191,7 @@ class Patient extends REST_Controller
             $response['message']    = 'Pasien tidak terdaftar didalam sistem !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function getHistory_get() {
@@ -208,11 +208,27 @@ class Patient extends REST_Controller
                 $therapyLabel               = $this->master->masterStatic('terapi');
                 $rehabilityLabel            = $this->master->masterStatic('rehabilitas');
 
+                $historyType = '';
+                $symptomName = '';
+                if ($data->HistoryType == '1')
+                    $historyType    = 'Gagal';
+                elseif ($data->HistoryType == '2')
+                    $historyType    = 'Bingung';
+                else
+                    $historyType    = 'Dan Lain-lain';
+
+                if ($data->Symptom == '1')
+                    $symptomName    = 'Sakit';
+                elseif ($data->Symptom == '2')
+                    $symptomName    = 'Mengantuk';
+                else
+                    $symptomName    = 'Dan Lain-lain';
+
                 $param['PatientId']         = $patientId;
                 $param['HistoryType']       = $data->HistoryType;
-                $param['HistoryTypeName']   = ($data->HistoryType == '2' ? 'Bingung' : $data->HistoryType == '1' ? 'Gagal' : 'Dan Lain-lain');
+                $param['HistoryTypeName']   = $historyType;
                 $param['Symptom']           = $data->Symptom;
-                $param['SymptomName']       = ($data->Symptom == '2' ? 'Mengantuk' : $data->Symptom == '1' ? 'Sakit' : 'Dan Lain-lain');
+                $param['SymptomName']       = $symptomName;
                 $param['SpecSymptom']       = $data->SpecSymptom;
                 $param['SpecSymptomName']   = $specificLabel[($data->SpecSymptom > 0 ? $data->SpecSymptom - 1 : $data->SpecSymptom)];
                 $param['FamilyRelated']     = $data->FamilyRelated;
@@ -242,7 +258,7 @@ class Patient extends REST_Controller
             $response['message']    = 'Patient tidak terdaftar di dalam sistem !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function saveHistory_post() {
@@ -301,7 +317,7 @@ class Patient extends REST_Controller
             $response['message']    = 'Pasien tidak terdaftar di sistem !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 }
 ?>

@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-require(APPPATH.'/libraries/REST_Controller.php');
+use chriskacerguis\RestServer\RestController;
 
 /**
  * @author     Cecep Rokani | cecepfahriazal1997@gmail.com
@@ -14,7 +14,7 @@ require(APPPATH.'/libraries/REST_Controller.php');
  *  ==========================================================================
  */
 
-class Auth extends REST_Controller
+class Auth extends RestController
 {
     public function __construct() {
         parent::__construct();
@@ -57,7 +57,7 @@ class Auth extends REST_Controller
             $data['result']       = "";
         }
 
-        $this->response($data);
+        $this->response($data, 200);
     }
 
     public function profile_get() {
@@ -74,7 +74,7 @@ class Auth extends REST_Controller
             $data['result']       = "";
         }
 
-        $this->response($data);
+        $this->response($data, 200);
     }
 
     public function register_post() {
@@ -114,7 +114,7 @@ class Auth extends REST_Controller
             }
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function changePassword_post() {
@@ -164,7 +164,7 @@ class Auth extends REST_Controller
             $data['result']       = "";
         }
 
-        $this->response($data);
+        $this->response($data, 200);
     }
 
     public function logout_post() {
@@ -184,6 +184,6 @@ class Auth extends REST_Controller
             $response["message"]    = "Anda gagal logout dari aplikasi !";
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 }

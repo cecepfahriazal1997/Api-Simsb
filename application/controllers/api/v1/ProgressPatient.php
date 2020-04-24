@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-require(APPPATH.'/libraries/REST_Controller.php');
+use chriskacerguis\RestServer\RestController;
 
 /**
  * @author     Cecep Rokani | cecepfahriazal1997@gmail.com
@@ -14,7 +14,7 @@ require(APPPATH.'/libraries/REST_Controller.php');
  *  ==========================================================================
  */
 
-class ProgressPatient extends REST_Controller
+class ProgressPatient extends RestController
 {
     public function __construct() {
         parent::__construct();
@@ -46,7 +46,7 @@ class ProgressPatient extends REST_Controller
             $response['message']    = 'Belum ada history progress pada pasien ini !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function getProgressDetail_get() {
@@ -91,7 +91,7 @@ class ProgressPatient extends REST_Controller
             $response['message']    = 'Belum ada history progress pada pasien ini !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
     
     public function insertProgress_post() {
@@ -134,7 +134,7 @@ class ProgressPatient extends REST_Controller
             $response['message']    = 'Pasien tidak terdaftar di sistem !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function updateProgress_post() {
@@ -178,7 +178,7 @@ class ProgressPatient extends REST_Controller
             $response['message']    = 'Pasien tidak terdaftar di sistem !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function deleteProgress_post() {
@@ -200,7 +200,7 @@ class ProgressPatient extends REST_Controller
             $response['message']    = 'Data gagal dihapus, data tidak terdaftar disistem !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 }
 ?>

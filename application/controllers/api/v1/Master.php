@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-require(APPPATH.'/libraries/REST_Controller.php');
+use chriskacerguis\RestServer\RestController;
 
 /**
  * @author     Cecep Rokani | cecepfahriazal1997@gmail.com
@@ -14,7 +14,7 @@ require(APPPATH.'/libraries/REST_Controller.php');
  *  ==========================================================================
  */
 
-class Master extends REST_Controller
+class Master extends RestController
 {
     public function __construct() {
         parent::__construct();
@@ -38,7 +38,7 @@ class Master extends REST_Controller
 
         $response['status'] = true;
         $response['data']   = $temp;
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function listCountries_get() {
@@ -53,7 +53,7 @@ class Master extends REST_Controller
             $response['message']    = 'Data tidak ditemukan !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 }
 ?>

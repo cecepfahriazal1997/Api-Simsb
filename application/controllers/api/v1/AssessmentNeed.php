@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-require(APPPATH.'/libraries/REST_Controller.php');
+use chriskacerguis\RestServer\RestController;
 
 /**
  * @author     Cecep Rokani | cecepfahriazal1997@gmail.com
@@ -14,7 +14,7 @@ require(APPPATH.'/libraries/REST_Controller.php');
  *  ==========================================================================
  */
 
-class AssessmentNeed extends REST_Controller
+class AssessmentNeed extends RestController
 {
     public function __construct() {
         parent::__construct();
@@ -34,7 +34,7 @@ class AssessmentNeed extends REST_Controller
             $response['message']    = 'Data tidak ditemukan !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function saveData_post() {
@@ -97,7 +97,7 @@ class AssessmentNeed extends REST_Controller
             $response['message']    = 'Data gagal disimpan !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 
     public function deleteData_post() {
@@ -118,7 +118,7 @@ class AssessmentNeed extends REST_Controller
             $response['message']    = 'Data tidak terdaftar didalam sistem !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 }
 ?>

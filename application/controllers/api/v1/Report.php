@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-require(APPPATH.'/libraries/REST_Controller.php');
+use chriskacerguis\RestServer\RestController;
 
 /**
  * @author     Cecep Rokani | cecepfahriazal1997@gmail.com
@@ -14,7 +14,7 @@ require(APPPATH.'/libraries/REST_Controller.php');
  *  ==========================================================================
  */
 
-class Report extends REST_Controller
+class Report extends RestController
 {
     public function __construct() {
         parent::__construct();
@@ -76,7 +76,7 @@ class Report extends REST_Controller
             $response['message']    = 'Data tidak ditemukan !';
         }
 
-        $this->response($response);
+        $this->response($response, 200);
     }
 }
 ?>
