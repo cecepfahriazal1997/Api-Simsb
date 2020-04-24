@@ -210,9 +210,9 @@ class Patient extends REST_Controller
 
                 $param['PatientId']         = $patientId;
                 $param['HistoryType']       = $data->HistoryType;
-                $param['HistoryTypeName']   = ($data->HistoryType == '2' ? 'Bingung' : 'Gagal');
+                $param['HistoryTypeName']   = ($data->HistoryType == '2' ? 'Bingung' : $data->HistoryType == '1' ? 'Gagal' : 'Dan Lain-lain');
                 $param['Symptom']           = $data->Symptom;
-                $param['SymptomName']       = ($data->Symptom == '2' ? 'Mengantuk' : 'Sakit');
+                $param['SymptomName']       = ($data->Symptom == '2' ? 'Mengantuk' : $data->Symptom == '1' ? 'Sakit' : 'Dan Lain-lain');
                 $param['SpecSymptom']       = $data->SpecSymptom;
                 $param['SpecSymptomName']   = $specificLabel[($data->SpecSymptom > 0 ? $data->SpecSymptom - 1 : $data->SpecSymptom)];
                 $param['FamilyRelated']     = $data->FamilyRelated;
